@@ -1,6 +1,4 @@
-/* ===============================
-   VARIABLES
-=============================== */
+/* VARIABLES DE COULERUS */
 :root {
   --fond: #070708;
   --rouge: #8A2121;
@@ -8,30 +6,29 @@
   --gris: #BEBEBE;
 }
 
-/* ===============================
-   BASE GÉNÉRALE
-=============================== */
-body {
+/* BASE GÉNÉRALE*/
+html, body {
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
   background: var(--fond);
   color: var(--texte);
   font-family: 'Inter', sans-serif;
 }
-html, body {
-  width: 100%;
-  overflow-x: hidden; 
-}
 
 .container {
-  width: 100%;
-  margin: 0 auto;
   position: relative;
   box-sizing: border-box;
-  overflow: hidden;
+  padding: 0 clamp(80px, 10vw, 162px); /* marges latérales fluides */
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 
-/* HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO -HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - */
+
+/* ===============================
+   EN-TÊTE
+=============================== */
 .entete {
   background: var(--fond);
   border-bottom: 1px solid #222;
@@ -41,7 +38,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 162px; 
+  padding: 16px 162px; /* marges latérales fixes */
 }
 
 .logo img {
@@ -64,6 +61,7 @@ html, body {
   border-color: var(--rouge);
   color: var(--rouge);
 }
+
 /* SECTION INTRO - SECTION INTRO  - SECTION INTRO  - SECTION INTRO  - SECTION INTRO  - SECTION INTRO  - SECTION INTRO  - SECTION INTRO  - SECTION INTRO */
    .intro {
     position: relative;
@@ -85,14 +83,13 @@ html, body {
   .pasteque {
     position: absolute;
     left: 50%;
-    top: 56%; /* légèrement abaissée */
+    top: 10%; /* légèrement abaissée */
     transform: translate(-50%, -50%);
-    width: 420px; /* taille ajustée */
+    width: 200px; /* taille ajustée */
     height: auto;
     pointer-events: none;
     z-index: 0;
-    opacity: 1; /* bien visible */
-  }
+    }
   
   /*BLOCS DE TEXTE*/
   .bloc-gauche {
@@ -135,11 +132,11 @@ html, body {
   .titre-droit .l1 {
     display: block;
   }
-  
   .titre-droit .l2 {
     display: flex;
     justify-content: flex-start; /* garde le texte à gauche */
-    gap: 20px;                 /* espace entre le texte et la pilule */
+    gap: 24px;            
+    
   }
   
   /* BOUTON ROUGE */
@@ -175,7 +172,7 @@ html, body {
     display: block;
     width: 100%;           /* prend toute la largeur du .container */
     height: auto;          /* conserve les proportions */
-    margin-top: 100px;
+    margin-top: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     position: relative;
