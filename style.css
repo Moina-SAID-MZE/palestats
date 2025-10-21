@@ -1,0 +1,66 @@
+/* ===============================
+   VARIABLES
+=============================== */
+:root {
+  --fond: #070708;
+  --rouge: #8A2121;
+  --texte: #FFFFFF;
+  --gris: #BEBEBE;
+}
+
+/* ===============================
+   BASE GÉNÉRALE
+=============================== */
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: 'Inter', sans-serif;
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO -HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - HERO - */
+.entete {
+  background: var(--fond);
+  border-bottom: 1px solid #222;
+}
+
+.entete .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 162px; 
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+}
+
+.bouton-contact {
+  border: 1px solid #2F2F37;
+  color: var(--texte);
+  background: #1C1C21;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.bouton-contact:hover {
+  border-color: var(--rouge);
+  color: var(--rouge);
+}
