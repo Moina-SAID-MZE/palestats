@@ -179,73 +179,157 @@ html, body {
     z-index: 1;
   }
   
-/* PRESENTATION */
+/* ===============================
+   PRESENTATION (version responsive)
+=============================== */
 
-/* --- TABLETTES (≤ 1024px) --- */
-@media (max-width: 1024px) {
-  /* L’intro passe en une seule colonne */
-  .intro .container {
-    grid-template-columns: 1fr;
-    text-align: center;
+#presentation {
+  background: #0E0E0E;
+  color: var(--texte);
+  padding: 80px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+#presentation .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 162px;
+}
+
+/* --- TITRE SECONDAIRE --- */
+.section-title {
+  color: var(--gris);
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* --- GRILLE PRINCIPALE --- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+/* --- LOGO --- */
+.logo-palestats img {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* --- IMAGE DRAPEAU --- */
+.image-drapeau img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* --- TITRE INTRO --- */
+.intro-titre {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--texte);
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* --- TEXTE --- */
+.texte-presentation {
+  background: #1B1B1B;
+  color: var(--gris);
+  padding: 25px 30px;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=============================== */
+
+/* --- MacBook / Tablettes moyennes (≤ 1200px) --- */
+@media (max-width: 1200px) {
+  #presentation .container {
+    padding: 0 80px;
   }
-
-  /* Texte et images centrés */
-  .bloc-gauche, .bloc-droit {
-    text-align: center;
-  }
-
-  /* Section présentation à une colonne */
   .grid-2 {
-    grid-template-columns: 1fr;
+    gap: 40px;
   }
+  .image-drapeau img {
+    max-width: 450px;
+  }
+}
 
-  /* Réduction des marges latérales */
-  .container {
+/* --- Tablettes et écrans moyens (≤ 992px) --- */
+@media (max-width: 992px) {
+  #presentation .container {
     padding: 0 60px;
   }
+  .grid-2 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .logo-palestats img {
+    margin: 0 auto 20px;
+  }
+  .image-drapeau img {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  .texte-presentation {
+    margin: 0 auto;
+    max-width: 600px;
+  }
 }
 
-/* --- MOBILES (≤ 768px) --- */
+/* --- Petites tablettes et grands téléphones (≤ 768px) --- */
 @media (max-width: 768px) {
-  /* Entête en colonne */
-  .entete .container {
-    flex-direction: column;
-    gap: 10px;
-    padding: 16px 30px;
+  #presentation {
+    padding: 60px 0;
   }
-
-  /* Titres plus petits */
-  .titre-droit {
-    font-size: 28px;
+  #presentation .container {
+    padding: 0 40px;
   }
-
-  .titre-gauche {
+  .intro-titre {
+    font-size: 18px;
+  }
+  .texte-presentation {
     font-size: 14px;
+    padding: 20px;
   }
+  .grid-2 {
+    gap: 32px;
+  }
+}
 
-  /* Images centrées */
+/* --- Mobiles (≤ 480px) --- */
+@media (max-width: 480px) {
+  #presentation {
+    padding: 40px 0;
+  }
+  #presentation .container {
+    padding: 0 24px;
+  }
+  .intro-titre {
+    font-size: 16px;
+  }
+  .section-title {
+    font-size: 12px;
+  }
+  .texte-presentation {
+    padding: 16px;
+    font-size: 13px;
+  }
+  .logo-palestats img {
+    width: 140px;
+  }
   .image-drapeau img {
     max-width: 100%;
-    margin: 0 auto;
   }
 }
-
-/* --- PETITS MOBILES (≤ 480px) --- */
-@media (max-width: 480px) {
-  /* Police encore plus petite */
-  .titre-droit {
-    font-size: 24px;
-  }
-
-  /* Boutons plus petits */
-  .bouton {
-    width: 80px;
-    height: 40px;
-  }
-
-  /* Marges réduites */
-  .container {
-    padding: 0 20px;
-  }
-}
-.texte-presentation { ... }
