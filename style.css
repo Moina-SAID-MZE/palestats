@@ -180,51 +180,64 @@ html, body {
   }
   
 /* PRESENTATION */
-
 #presentation {
-  background: #0e0e0e;
-  color: #e6e6e6;
-  padding: 50px 0;
-  font-family: "Poppins", sans-serif;
+  background: #0E0E0E;
+  color: var(--texte);
+  padding: 80px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+#presentation .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 162px;
 }
 
 .section-title {
-  color: #b3b3b3;
+  color: var(--gris);
   font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.logo-palestats img {
-  width: 180px;
-  margin-right: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 40px;
+  gap: 48px;
+}
+
+.logo-palestats img {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .image-drapeau img {
   width: 100%;
   max-width: 500px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .intro-titre {
   font-weight: 600;
-  font-size: 18px;
-  color: #e6e6e6;
-  display: block;     /* pour le mettre sur sa propre ligne */
-  margin-bottom: 10px;
+  font-size: 20px;
+  color: var(--texte);
+  display: block;
+  margin-bottom: 12px;
 }
 
-
 .texte-presentation {
-  background: #1b1b1b;
-  padding: 25px;
+  background: #1B1B1B;
+  color: var(--gris);
+  padding: 25px 30px;
   border-radius: 12px;
   font-size: 15px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
 }
