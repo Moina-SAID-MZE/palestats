@@ -180,64 +180,71 @@ html, body {
   }
   
 /* PRESENTATION */
-#presentation {
-  background: #0E0E0E;
-  color: var(--texte);
-  padding: 80px 0;
-  font-family: 'Inter', sans-serif;
+
+/* --- TABLETTES (≤ 1024px) --- */
+@media (max-width: 1024px) {
+  /* L’intro passe en une seule colonne */
+  .intro .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Texte et images centrés */
+  .bloc-gauche, .bloc-droit {
+    text-align: center;
+  }
+
+  /* Section présentation à une colonne */
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Réduction des marges latérales */
+  .container {
+    padding: 0 60px;
+  }
 }
 
-#presentation .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 162px;
+/* --- MOBILES (≤ 768px) --- */
+@media (max-width: 768px) {
+  /* Entête en colonne */
+  .entete .container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 30px;
+  }
+
+  /* Titres plus petits */
+  .titre-droit {
+    font-size: 28px;
+  }
+
+  .titre-gauche {
+    font-size: 14px;
+  }
+
+  /* Images centrées */
+  .image-drapeau img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 
-.section-title {
-  color: var(--gris);
-  font-size: 14px;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-}
+/* --- PETITS MOBILES (≤ 480px) --- */
+@media (max-width: 480px) {
+  /* Police encore plus petite */
+  .titre-droit {
+    font-size: 24px;
+  }
 
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  gap: 48px;
-}
+  /* Boutons plus petits */
+  .bouton {
+    width: 80px;
+    height: 40px;
+  }
 
-.logo-palestats img {
-  width: 180px;
-  height: auto;
-  display: block;
-  margin-bottom: 20px;
+  /* Marges réduites */
+  .container {
+    padding: 0 20px;
+  }
 }
-
-.image-drapeau img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-.intro-titre {
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--texte);
-  display: block;
-  margin-bottom: 12px;
-}
-
-.texte-presentation {
-  background: #1B1B1B;
-  color: var(--gris);
-  padding: 25px 30px;
-  border-radius: 12px;
-  font-size: 15px;
-  line-height: 1.6;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-}
-
-.texte-presentation { ... }
