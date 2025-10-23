@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!section || !zone) return;
 
-  fetch('données/noms.csv')
+  fetch('donnees/noms.csv')
     .then(r => r.text())
     .then(txt => {
       const lignes = txt.split('\n').map(l => l.trim()).filter(Boolean);
