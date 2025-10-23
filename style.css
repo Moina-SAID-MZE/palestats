@@ -410,3 +410,98 @@ html, body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }     
 .texte-presentation { ... }
+
+/* ===============================
+   FOOTER
+=============================== */
+.footer {
+  background: var(--fond);
+  border-top: 1px solid #1E1E1E;
+  padding: 60px 80px 30px;
+  position: relative;
+  overflow: hidden;
+  color: var(--texte);
+}
+
+/* Texte principal */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.footer-subtitle {
+  font-size: 0.85rem;
+  color: var(--gris);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  margin-left: -50px;
+}
+
+.footer-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-left: -50px;
+}
+
+.footer-smiley {
+  width: 45px;
+  height: 45px;
+  vertical-align: -5px;
+  margin: 0 8px;
+}
+
+/* Pastèque décorative */
+.footer-pasteque {
+  position: absolute;
+  top: -260px;
+  right: -360px;
+  width: 600px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Bas du footer */
+.footer-bottom {
+  border-top: 1px solid #1E1E1E;
+  margin-top: 60px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--gris);
+}
+
+/* Lien Mentions légales avec effet surligné */
+.footer-lien {
+  color: var(--gris);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-lien::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: var(--texte);
+  transition: width 0.3s ease;
+}
+
+.footer-lien:hover {
+  color: var(--texte);
+}
+
+.footer-lien:hover::after {
+  width: 100%;
+}
+
+.footer-droits {
+  margin: 0;
+}
+
