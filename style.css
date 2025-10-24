@@ -87,11 +87,10 @@ html, body {
   .pasteque {
     position: absolute;
     left: 80%;
-    top: 33%; /* légèrement abaissée */
+    top: 45%; /* légèrement abaissée */
     transform: translate(-50%, -50%);
-    width: 200px; /* taille ajustée */
+    width: 250px; /* taille ajustée */
     height: auto;
-    pointer-events: none;
     z-index: 0;
     }
 /* ===== Bloc gauche ===== */
@@ -123,6 +122,7 @@ html, body {
 .bouton {
   display: inline-block;
   transition: transform 0.25s ease;
+    margin-bottom: 40px
 }
 
 .bouton img {
@@ -136,18 +136,19 @@ html, body {
 }
 
 
-  /* IMAGE GALERIE*/
-  .image{
-    grid-column: 1 / -1;   /* occupe les 2 colonnes de la grille */
-    display: block;
-    width: 100%;           /* prend toute la largeur du .container */
-    height: auto;          /* conserve les proportions */
-    margin-top: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    position: relative;
-    z-index: 1;
-  }
+.image {
+  display: block;
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto; /* centrée, sans marge haute */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
   
 
   .liste-prenoms {
@@ -172,6 +173,7 @@ html, body {
     top: 50%;
     transform: translateY(-50%);
   }
+  
   
 /* PRESENTATION */
 
