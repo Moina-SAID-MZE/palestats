@@ -148,9 +148,6 @@ html, body {
 
 
 
-
-  
-
   .liste-prenoms {
     width: 100%;
     overflow: hidden;
@@ -173,6 +170,7 @@ html, body {
     top: 50%;
     transform: translateY(-50%);
   }
+  
   
   
 /* PRESENTATION */
