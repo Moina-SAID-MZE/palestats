@@ -1,0 +1,428 @@
+/* ============================    Variables de couleurs    ============================ */
+:root {
+  --fond: #070708;
+  --rouge: #8A2121;
+  --texte: #FFFFFF;
+  --gris: #BEBEBE;
+}
+
+/* ============================    Base générale    ============================ */
+html, body {
+  margin: 0;
+  width: 100%;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: 'Manrope', sans-serif; /* Police utilisée partout */
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+p, a, li {
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 clamp(80px, 10vw, 160px);
+  box-sizing: border-box;
+}
+
+/* ============================    HEADER    ============================ */
+.entete {
+  background: var(--fond);
+  border-bottom: 1px solid #222;
+}
+
+.entete .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 10vw;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+}
+
+.bouton-contact {
+  background: #1C1C21;
+  color: var(--texte);
+  border: 1px solid #2F2F37;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.bouton-contact:hover {
+  border-color: var(--rouge);
+  color: var(--rouge);
+}
+
+/* ============================    SECTION INTRO    ============================ */
+.intro {
+  position: relative;
+  padding: 30px 0 90px;
+  background: var(--fond);
+  overflow: hidden;
+}
+.intro .container {
+  position: relative; /* ✅ le parent devient la référence de la pastèque */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  z-index: 1;
+}
+
+
+/* Image pastèque décorative */
+.pasteque {
+  position: absolute;
+  top: 40%;               
+  right: 15%;              
+  transform: translateY(-50%);
+  width: 230px;            /* taille adaptée */          
+}
+
+/* Bloc texte gauche */
+.bloc-gauche {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  z-index: 1;
+}
+
+/* Texte + bouton */
+.texte-bouton {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.texte {
+  color: var(--gris);
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* Bouton image */
+.bouton {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.bouton img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.bouton:hover {
+  transform: translateY(-3px);
+}
+
+/* Image principale */
+.image {
+  display: block;
+  width: 85%;
+  max-width: 1200px;
+  margin: 23px auto;
+  z-index: 1;
+}
+
+/* ============================    LISTE DE PRÉNOMS DÉFILANTE    ============================ */
+.liste-prenoms {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  margin-top: 20px;
+  padding: 25px 0;
+  position: relative;
+}
+
+.liste-prenoms span {
+  display: inline-block;
+  color: var(--gris);
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+/* ============================    PRÉSENTATION    ============================ */
+#presentation {
+  background: #0e0e0e;
+  color: #e6e6e6;
+  padding: 50px 0;
+  font-family: 'Manrope', sans-serif; /* ✅ Police harmonisée */
+}
+
+.section-title {
+  color: #b3b3b3;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.logo-palestats img {
+  width: 100px;
+  margin-right: 30px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.image-drapeau img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.intro-titre {
+  font-weight: 600;
+  font-size: 18px;
+  color: #e6e6e6;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.texte-presentation {
+  background: #1b1b1b;
+  padding: 25px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+/* ============================    FOOTER    ============================ */
+.footer {
+  background: var(--fond);
+  border-top: 1px solid #1E1E1E;
+  padding: 60px 80px 30px;
+  color: var(--texte);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.footer-subtitle {
+  font-size: 0.85rem;
+  color: var(--gris);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  margin-left: -50px;
+}
+
+.footer-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-left: -50px;
+}
+
+.footer-smiley {
+  width: 45px;
+  height: 45px;
+  vertical-align: -5px;
+  margin: 0 8px;
+}
+
+/* Pastèque décorative */
+.footer-pasteque {
+  position: absolute;
+  top: -260px;
+  right: -360px;
+  width: 600px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Bas du footer */
+.footer-bottom {
+  border-top: 1px solid #1E1E1E;
+  margin-top: 60px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--gris);
+}
+
+.footer-lien {
+  color: var(--gris);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-lien::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: var(--texte);
+  transition: width 0.3s ease;
+}
+
+.footer-lien:hover {
+  color: var(--texte);
+}
+
+.footer-lien:hover::after {
+  width: 100%;
+}
+
+/* ============================    FENÊTRE DE CONTACTS    ============================ */
+.fenetre {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+/* Contenu */
+.contenu-fenetre {
+  background: #111;
+  color: white;
+  border-radius: 20px;
+  padding: 50px 60px;
+  width: 95%;
+  max-width: 1200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Bouton fermer */
+.fermer-fenetre {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid #EBEBEB;
+  color: #EBEBEB;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.fermer-fenetre:hover {
+  background: #EBEBEB;
+  color: #111;
+}
+
+/* Titre */
+.contenu-fenetre h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
+/* ============================    CARTES DE CONTACT    ============================ */
+.cartes-contacts {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
+
+.carte-contact {
+  flex: 1;
+  max-width: 320px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.3s ease;
+}
+
+.carte-contact:hover {
+  border-color: var(--rouge);
+}
+
+.carte-contact h3 {
+  margin-bottom: 18px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* Liens (GitHub, LinkedIn, Mail) */
+.carte-contact a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  font-size: 15px;
+  color: var(--texte);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.carte-contact a img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+/* Ligne rouge animée sous le texte */
+.carte-contact a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 28px;
+  width: 0%;
+  height: 1px;
+  background: var(--rouge);
+  transition: width 0.7s;
+}
+
+/* Survol du lien */
+.carte-contact a:hover::after {
+  width: calc(100% - 28px);
+}
+
+.carte-contact a:hover {
+  color: var(--rouge);
+}
+
+.carte-contact a:hover img {
+  transform: scale(1.15);
+  filter: brightness(1.3);
+}
