@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palestats — Dataviz</title>
+
+  <!-- Feuille de style -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Police Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="entete">
+    <div class="container">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Logo Palestats">
+      </a>
+
+      <!-- Bouton pour ouvrir la fenêtre de contacts -->
+      <a href="#" class="bouton-contact">Nos contacts</a>
+    </div>
+  </header>
+
+  <!-- ================= SECTION INTRO ================= -->
+  <main>
+    <section class="intro">
+      <div class="container">
+
+        <!-- Image décorative de la pastèque -->
+        <img src="img/background-pasteque.png" alt="" class="pasteque">
+
+        <!-- Bloc gauche avec le texte et le bouton -->
+        <div class="bloc-gauche">
+          <h2 class="titre-gauche">Les données racontent mieux que les mots.</h2>
+
+          <div class="texte-bouton">
+            <p class="texte">
+              Une expérience visuelle et mémorielle sur l'histoire du peuple palestinien, racontée à travers les chiffres.
+            </p>
+
+            <!-- Bouton vers la section suivante -->
+            <a href="#section-suivante" class="bouton">
+              <img src="img/bouton-cta.png" alt="Bouton vers la section suivante">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image principale (galerie) -->
+      <img src="img/photo-hero.png" alt="Galerie Palestats" class="image">
+
+      <!-- Liste défilante des prénoms -->
+      <div class="liste-prenoms" id="liste-prenoms">
+        <span id="prenoms-defilant"></span>
+      </div>
+    </section>
+
+    <!-- Section vide utilisée comme ancre pour le scroll -->
+    <section id="section-suivante"></section>
+
+    <!-- ================= SECTION PRÉSENTATION ================= -->
+    <section id="presentation" class="section">
+      <div class="container">
+        <h2 class="section-title">C’EST QUOI ?</h2>
+
+        <!-- Logo du projet -->
+        <div class="logo-palestats">
+          <img src="img/logo.png" alt="Logo Palestats">
+        </div>
+
+        <!-- Contenu principal en deux colonnes -->
+        <div class="card grid-2">
+          <div class="image-drapeau">
+            <img src="img/image_drapeau.png" alt="Image pour la présentation">
+          </div>
+
+          <div class="texte-presentation">
+            <p><span class="intro-titre">🍉 Introduction</span></p>
+            <p>
+              Palestats est un projet réalisé par Moina, Sarah et Sylia, trois étudiantes en deuxième année de BUT Métiers du Multimédia et de l’Internet (BUT MMI).
+              Réalisé dans le cadre d’une SAÉ, il explore la manière dont le web peut servir à informer et à raconter autrement — ici, à travers des cartes, des chiffres et des récits visuels autour de la Palestine.
+            </p>
+            <p>
+              Au-delà de l’aspect technique, Palestats est avant tout une démarche de sens.
+              Nous voulions créer un espace qui permette de rendre visible ce que l’actualité effleure souvent sans le montrer :
+              la vie, les dynamiques et les réalités humaines derrière le mot “Palestine”.
+              Ce projet est notre manière d’allier design, information et mémoire pour donner corps à une histoire qui continue de s’écrire chaque jour.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-subtitle">UN PROJET DE MÉMOIRE ET DE DONNÉES.</p>
+      <h2 class="footer-title">
+        MERCI D’AVOIR
+        <img src="img/bouton.png" alt="Smiley" class="footer-smiley">
+        <br>PARCOURU PALESTATS
+      </h2>
+
+      <!-- Image décorative -->
+      <img src="img/pasteque-crayon.png" alt="Pastèque dessinée" class="footer-pasteque">
+    </div>
+
+    <div class="footer-bottom">
+      <a href="mention.html" class="footer-lien">Mentions légales</a>
+      <p class="footer-droits">© 2025 Palestats. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ================= FENÊTRE CONTACTS ================= -->
+  <div class="fenetre" id="fenetre-contacts">
+    <div class="contenu-fenetre">
+      <button class="fermer-fenetre">×</button>
+      <h2>Nos contacts</h2>
+
+      <div class="cartes-contacts">
+
+        <!-- Carte : Sylia -->
+        <div class="carte-contact">
+          <h3>Sylia BOUHITEM</h3>
+          <a href="https://github.com/Sylia-B" target="_blank">
+            <img src="img/github.png" alt=""> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/sylia-bouhitem-a5609b326/" target="_blank">
+            <img src="img/linkedin.png" alt=""> LinkedIn
+          </a>
+          <a href="mailto:syliabouhitem@gmail.com">
+            <img src="img/mail.png" alt=""> syliabouhitem@gmail.com
+          </a>
+        </div>
+
+        <!-- Carte : Moina -->
+        <div class="carte-contact">
+          <h3>Moina SAID MZE</h3>
+          <a href="https://github.com/Moina-SAID-MZE" target="_blank">
+            <img src="img/github.png" alt=""> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/moina-said-mze-550b81295/" target="_blank">
+            <img src="img/linkedin.png" alt=""> LinkedIn
+          </a>
+          <a href="mailto:saidmze.moina@gmail.com">
+            <img src="img/mail.png" alt=""> saidmze.moina@gmail.com
+          </a>
+        </div>
+
+        <!-- Carte : Sarah -->
+        <div class="carte-contact">
+          <h3>Sarah GOULAMHOUSSEN</h3>
+          <a href="https://github.com/sarah-gs" target="_blank">
+            <img src="img/github.png" alt=""> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/sarah-goulamhoussen-49a6a0330/" target="_blank">
+            <img src="img/linkedin.png" alt=""> LinkedIn
+          </a>
+          <a href="mailto:sarahgoulamhoussen.s@gmail.com">
+            <img src="img/mail.png" alt=""> sarahgoulamhoussen.s@gmail.com
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPT ================= -->
+  <script src="script.js"></script>
+</body>
+</html>
