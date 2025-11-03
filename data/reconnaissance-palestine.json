@@ -1,0 +1,1000 @@
+[
+  {
+    "id": "AF",
+    "nom": "Afghanistan",
+    "status": "1988"
+  },
+  {
+    "id": "ZA",
+    "nom": "Afrique du Sud",
+    "status": "1989–2023"
+  },
+  {
+    "id": "AL",
+    "nom": "Albanie",
+    "status": "1988"
+  },
+  {
+    "id": "DZ",
+    "nom": "Algérie",
+    "status": "1988"
+  },
+  {
+    "id": "DE",
+    "nom": "Allemagne",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "AD",
+    "nom": "Andorre",
+    "status": "2025"
+  },
+  {
+    "id": "AO",
+    "nom": "Angola",
+    "status": "1988"
+  },
+  {
+    "id": "AG",
+    "nom": "Antigua-et-Barbuda",
+    "status": "1989–2023"
+  },
+  {
+    "id": "SA",
+    "nom": "Arabie saoudite",
+    "status": "1988"
+  },
+  {
+    "id": "AR",
+    "nom": "Argentine",
+    "status": "1989–2023"
+  },
+  {
+    "id": "AM",
+    "nom": "Arménie",
+    "status": "2024"
+  },
+  {
+    "id": "AU",
+    "nom": "Australie",
+    "status": "2025"
+  },
+  {
+    "id": "AT",
+    "nom": "Autriche",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "AZ",
+    "nom": "Azerbaïdjan",
+    "status": "1989–2023"
+  },
+  {
+    "id": "BS",
+    "nom": "Bahamas",
+    "status": "2024"
+  },
+  {
+    "id": "BH",
+    "nom": "Bahreïn",
+    "status": "1988"
+  },
+  {
+    "id": "BD",
+    "nom": "Bangladesh",
+    "status": "1988"
+  },
+  {
+    "id": "BB",
+    "nom": "Barbade",
+    "status": "2024"
+  },
+  {
+    "id": "BE",
+    "nom": "Belgique",
+    "status": "2025"
+  },
+  {
+    "id": "BZ",
+    "nom": "Belize",
+    "status": "1989–2023"
+  },
+  {
+    "id": "BJ",
+    "nom": "Bénin",
+    "status": "1989–2023"
+  },
+  {
+    "id": "BT",
+    "nom": "Bhoutan",
+    "status": "1988"
+  },
+  {
+    "id": "BY",
+    "nom": "Biélorussie",
+    "status": "1988"
+  },
+  {
+    "id": "MM",
+    "nom": "Birmanie",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "BO",
+    "nom": "Bolivie",
+    "status": "1989–2023"
+  },
+  {
+    "id": "BA",
+    "nom": "Bosnie-Herzégovine",
+    "status": "1989–2023"
+  },
+  {
+    "id": "BW",
+    "nom": "Botswana",
+    "status": "1988"
+  },
+  {
+    "id": "BR",
+    "nom": "Brésil",
+    "status": "1989–2023"
+  },
+  {
+    "id": "BN",
+    "nom": "Brunei",
+    "status": "1988"
+  },
+  {
+    "id": "BG",
+    "nom": "Bulgarie",
+    "status": "1988"
+  },
+  {
+    "id": "BF",
+    "nom": "Burkina Faso",
+    "status": "1988"
+  },
+  {
+    "id": "BI",
+    "nom": "Burundi",
+    "status": "1988"
+  },
+  {
+    "id": "KH",
+    "nom": "Cambodge",
+    "status": "1988"
+  },
+  {
+    "id": "CM",
+    "nom": "Cameroun",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "CA",
+    "nom": "Canada",
+    "status": "2025"
+  },
+  {
+    "id": "CV",
+    "nom": "Cap-Vert",
+    "status": "1988"
+  },
+  {
+    "id": "CL",
+    "nom": "Chili",
+    "status": "1989–2023"
+  },
+  {
+    "id": "CN",
+    "nom": "Chine",
+    "status": "1988"
+  },
+  {
+    "id": "CY",
+    "nom": "Chypre",
+    "status": "1988"
+  },
+  {
+    "id": "CO",
+    "nom": "Colombie",
+    "status": "1989–2023"
+  },
+  {
+   "id": "KM",
+    "nom": "Comores",
+    "status": "1988"
+  }, 
+  {
+    "id": "CG",
+    "nom": "Congo",
+    "status": "1988"
+  },
+  {
+    "id": "KP",
+    "nom": "Corée du Nord",
+    "status": "1988"
+  },
+  {
+    "id": "KR",
+    "nom": "Corée du Sud",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "CR",
+    "nom": "Costa Rica",
+    "status": "1989–2023"
+  },
+  {
+    "id": "CI",
+    "nom": "Côte d’Ivoire",
+    "status": "1989–2023"
+  },
+  {
+    "id": "HR",
+    "nom": "Croatie",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "CU",
+    "nom": "Cuba",
+    "status": "1988"
+  },
+  {
+    "id": "DK",
+    "nom": "Danemark",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "DJ",
+    "nom": "Djibouti",
+    "status": "1988"
+  },
+  {
+    "id": "DM",
+    "nom": "Dominique",
+    "status": "1989–2023"
+  },
+  {
+    "id": "EG",
+    "nom": "Égypte",
+    "status": "1988"
+  },
+  {
+    "id": "AE",
+    "nom": "Émirats arabes unis",
+    "status": "1988"
+  },
+  {
+    "id": "EC",
+    "nom": "Équateur",
+    "status": "1989–2023"
+  },
+  {
+    "id": "ER",
+    "nom": "Érythrée",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "ES",
+    "nom": "Espagne",
+    "status": "2024"
+  },
+  {
+    "id": "EE",
+    "nom": "Estonie",
+    "status": "Ne reconnaît pas"
+  },
+  { 
+    "id": "SZ", 
+    "nom": "Eswatini", 
+    "status": "1989–2023"
+   },
+
+  {
+    "id": "US",
+    "nom": "États-Unis",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "ET",
+    "nom": "Éthiopie",
+    "status": "1989–2023"
+  },
+  {
+    "id": "FJ",
+    "nom": "Fidji",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "FI",
+    "nom": "Finlande",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "FR",
+    "nom": "France",
+    "status": "2025"
+  },
+  {
+    "id": "GA",
+    "nom": "Gabon",
+    "status": "1988"
+  },
+  { 
+   "id": "GL", 
+   "nom": "Groenland (Danemark)", 
+   "status": "Ne reconnaît pas"
+ }
+,
+  {
+    "id": "GM",
+    "nom": "Gambie",
+    "status": "1988"
+  },
+  {
+    "id": "GE",
+    "nom": "Géorgie",
+    "status": "1989–2023"
+  },
+  {
+    "id": "GH",
+    "nom": "Ghana",
+    "status": "1988"
+  },
+  {
+    "id": "GR",
+    "nom": "Grèce",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "GD",
+    "nom": "Grenade",
+    "status": "1989–2023"
+  },
+  {
+    "id": "GT",
+    "nom": "Guatemala",
+    "status": "1989–2023"
+  },
+  {
+    "id": "GN",
+    "nom": "Guinée",
+    "status": "1988"
+  },
+  {
+    "id": "GW",
+    "nom": "Guinée-Bissau",
+    "status": "1988"
+  },
+  {
+    "id": "GQ",
+    "nom": "Guinée équatoriale",
+    "status": "1989–2023"
+  },
+  {
+    "id": "GY",
+    "nom": "Guyana",
+    "status": "1989–2023"
+  },
+  {
+    "id": "HT",
+    "nom": "Haïti",
+    "status": "1989–2023"
+  },
+  {
+    "id": "HN",
+    "nom": "Honduras",
+    "status": "1989–2023"
+  },
+  {
+    "id": "HU",
+    "nom": "Hongrie",
+    "status": "1988"
+  },
+  {
+    "id": "IN",
+    "nom": "Inde",
+    "status": "1988"
+  },
+  {
+    "id": "ID",
+    "nom": "Indonésie",
+    "status": "1988"
+  },
+  {
+    "id": "IQ",
+    "nom": "Irak",
+    "status": "1988"
+  },
+  {
+    "id": "IR",
+    "nom": "Iran",
+    "status": "1989–2023"
+  },
+  {
+    "id": "IE",
+    "nom": "Irlande",
+    "status": "2024"
+  },
+  {
+    "id": "IS",
+    "nom": "Islande",
+    "status": "1989–2023"
+  },
+  {
+    "id": "IL",
+    "nom": "Israël",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "IT",
+    "nom": "Italie",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "JM",
+    "nom": "Jamaïque",
+    "status": "2024"
+  },
+  {
+    "id": "JP",
+    "nom": "Japon",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "JO",
+    "nom": "Jordanie",
+    "status": "1988"
+  },
+  {
+    "id": "KZ",
+    "nom": "Kazakhstan",
+    "status": "1989–2023"
+  },
+  {
+    "id": "KE",
+    "nom": "Kenya",
+    "status": "1989–2023"
+  },
+  {
+    "id": "KG",
+    "nom": "Kirghizistan",
+    "status": "1989–2023"
+  },
+  {
+    "id": "KI",
+    "nom": "Kiribati",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "XXK",
+    "nom": "Kosovo",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "KW",
+    "nom": "Koweït",
+    "status": "1988"
+  },
+  {
+    "id": "LA",
+    "nom": "Laos",
+    "status": "1988"
+  },
+  {
+    "id": "LS",
+    "nom": "Lesotho",
+    "status": "1989–2023"
+  },
+  {
+    "id": "LV",
+    "nom": "Lettonie",
+    "status": "1988"
+  },
+  {
+    "id": "LB",
+    "nom": "Liban",
+    "status": "1989–2023"
+  },
+  {
+    "id": "LR",
+    "nom": "Liberia",
+    "status": "1989–2023"
+  },
+  {
+    "id": "LY",
+    "nom": "Libye",
+    "status": "1988"
+  },
+  {
+    "id": "LI",
+    "nom": "Liechtenstein",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "LT",
+    "nom": "Lituanie",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "LU",
+    "nom": "Luxembourg",
+    "status": "2025"
+  },
+  {
+    "id": "MK",
+    "nom": "Macédoine du Nord",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "MG",
+    "nom": "Madagascar",
+    "status": "1988"
+  },
+  {
+    "id": "MY",
+    "nom": "Malaisie",
+    "status": "1988"
+  },
+  {
+    "id": "MW",
+    "nom": "Malawi",
+    "status": "1989–2023"
+  },
+  {
+    "id": "MV",
+    "nom": "Maldives",
+    "status": "1988"
+  },
+  {
+    "id": "ML",
+    "nom": "Mali",
+    "status": "1988"
+  },
+  {
+    "id": "MT",
+    "nom": "Malte",
+    "status": "2025"
+  },
+  {
+    "id": "MA",
+    "nom": "Maroc",
+    "status": "1988"
+  },
+  {
+    "id": "MU",
+    "nom": "Maurice",
+    "status": "1988"
+  },
+  {
+    "id": "MR",
+    "nom": "Mauritanie",
+    "status": "1988"
+  },
+  {
+    "id": "MX",
+    "nom": "Mexique",
+    "status": "2025"
+  },
+  {
+    "id": "FM",
+    "nom": "Micronésie",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "MD",
+    "nom": "Moldavie",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "MC",
+    "nom": "Monaco",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "MN",
+    "nom": "Mongolie",
+    "status": "1988"
+  },
+  {
+    "id": "ME",
+    "nom": "Monténégro",
+    "status": "1989–2023"
+  },
+  {
+    "id": "MZ",
+    "nom": "Mozambique",
+    "status": "1988"
+  },
+  {
+    "id": "MZ",
+    "nom": "Mozambique",
+    "status": "1988"
+  },
+  {
+    "id": "NA",
+    "nom": "Namibie",
+    "status": "1988"
+  },
+  {
+    "id": "NR",
+    "nom": "Nauru",
+    "status": "1988"
+  },
+  {
+    "id": "NP",
+    "nom": "Népal",
+    "status": "1988"
+  },
+  {
+    "id": "NI",
+    "nom": "Nicaragua",
+    "status": "1988"
+  },
+  {
+    "id": "NE",
+    "nom": "Niger",
+    "status": "1988"
+  },
+  {
+    "id": "NG",
+    "nom": "Nigeria",
+    "status": "1988"
+  },
+  {
+    "id": "NO",
+    "nom": "Norvège",
+    "status": "1989–2023"
+  },
+  {
+    "id": "NZ",
+    "nom": "Nouvelle-Zélande",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "OM",
+    "nom": "Oman",
+    "status": "1988"
+  },
+  {
+    "id": "UG",
+    "nom": "Ouganda",
+    "status": "1988"
+  },
+  {
+    "id": "UZ",
+    "nom": "Ouzbékistan",
+    "status": "1989–2023"
+  },
+  {
+    "id": "PK",
+    "nom": "Pakistan",
+    "status": "1988"
+  },
+  {
+    "id": "PW",
+    "nom": "Palaos",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "PA",
+    "nom": "Panama",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "PG",
+    "nom": "Papouasie-Nouvelle-Guinée",
+    "status": "1989–2023"
+  },
+  {
+    "id": "PY",
+    "nom": "Paraguay",
+    "status": "1989–2023"
+  },
+  {
+    "id": "NL",
+    "nom": "Pays-Bas",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "PE",
+    "nom": "Pérou",
+    "status": "1989–2023"
+  },
+  {
+    "id": "PH",
+    "nom": "Philippines",
+    "status": "1989–2023"
+  },
+  {
+    "id": "PL",
+    "nom": "Pologne",
+    "status": "1988"
+  },
+  {
+    "id": "PT",
+    "nom": "Portugal",
+    "status": "2025"
+  },
+  {
+    "id": "QA",
+    "nom": "Qatar",
+    "status": "1988"
+  },
+  {
+    "id": "CF",
+    "nom": "République centrafricaine",
+    "status": "1988"
+  },
+  {
+    "id": "CD",
+    "nom": "République démocratique du Congo",
+    "status": "1988"
+  },
+  {
+    "id": "DO",
+    "nom": "République dominicaine",
+    "status": "1989–2023"
+  },
+  {
+    "id": "CZ",
+    "nom": "République tchèque",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "RO",
+    "nom": "Roumanie",
+    "status": "1988"
+  },
+  {
+    "id": "GB",
+    "nom": "Royaume-Uni",
+    "status": "2025"
+  },
+  {
+    "id": "RU",
+    "nom": "Russie",
+    "status": "1988"
+  },
+  {
+    "id": "RW",
+    "nom": "Rwanda",
+    "status": "1989–2023"
+  },
+  {
+    "id": "LC",
+    "nom": "Sainte-Lucie",
+    "status": "1989–2023"
+  },
+  {
+    "id": "KN",
+    "nom": "Saint-Kitts-et-Nevis",
+    "status": "1989–2023"
+  },
+  {
+    "id": "SV",
+    "nom": "Salvador",
+    "status": "1989–2023"
+  },
+  {
+    "id": "WS",
+    "nom": "Samoa",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "ST",
+    "nom": "Sao Tomé-et-Principe",
+    "status": "1988"
+  },
+  {
+    "id": "SN",
+    "nom": "Sénégal",
+    "status": "1988"
+  },
+  {
+    "id": "RS",
+    "nom": "Serbie",
+    "status": "1988"
+  },
+  {
+    "id": "SC",
+    "nom": "Seychelles",
+    "status": "1988"
+  },
+  {
+    "id": "SL",
+    "nom": "Sierra Leone",
+    "status": "1988"
+  },
+  {
+    "id": "SG",
+    "nom": "Singapour",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "SK",
+    "nom": "Slovaquie",
+    "status": "1988"
+  },
+  {
+    "id": "SI",
+    "nom": "Slovénie",
+    "status": "2024"
+  },
+  {
+    "id": "SO",
+    "nom": "Somalie",
+    "status": "1988"
+  },
+  {
+    "id": "SD",
+    "nom": "Soudan",
+    "status": "1988"
+  },
+  {
+    "id": "SS",
+    "nom": "Soudan du Sud",
+    "status": "1989–2023"
+  },
+  {
+    "id": "LK",
+    "nom": "Sri Lanka",
+    "status": "1988"
+  },
+  {
+    "id": "SE",
+    "nom": "Suède",
+    "status": "1989–2023"
+  },
+  {
+    "id": "CH",
+    "nom": "Suisse",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "SR",
+    "nom": "Suriname",
+    "status": "1989–2023"
+  },
+  {
+    "id": "SY",
+    "nom": "Syrie",
+    "status": "1989–2023"
+  },
+  {
+    "id": "TJ",
+    "nom": "Tadjikistan",
+    "status": "1989–2023"
+  },
+  {
+    "id": "TZ",
+    "nom": "Tanzanie",
+    "status": "1988"
+  },
+  {
+    "id": "TD",
+    "nom": "Tchad",
+    "status": "1988"
+  },
+  {
+    "id": "TH",
+    "nom": "Thaïlande",
+    "status": "1989–2023"
+  },
+  {
+    "id": "TL",
+    "nom": "Timor oriental",
+    "status": "1989–2023"
+  },
+  {
+    "id": "TG",
+    "nom": "Togo",
+    "status": "1988"
+  },
+  {
+    "id": "TO",
+    "nom": "Tonga",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "TT",
+    "nom": "Trinité-et-Tobago",
+    "status": "2024"
+  },
+  {
+    "id": "TN",
+    "nom": "Tunisie",
+    "status": "1988"
+  },
+  {
+    "id": "TM",
+    "nom": "Turkménistan",
+    "status": "1989–2023"
+  },
+  {
+    "id": "TR",
+    "nom": "Turquie",
+    "status": "1988"
+  },
+  {
+    "id": "TV",
+    "nom": "Tuvalu",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "UA",
+    "nom": "Ukraine",
+    "status": "1988"
+  },
+  {
+    "id": "UY",
+    "nom": "Uruguay",
+    "status": "1989–2023"
+  },
+  {
+    "id": "VU",
+    "nom": "Vanuatu",
+    "status": "1989–2023"
+  },
+  {
+    "id": "VA",
+    "nom": "Vatican",
+    "status": "1989–2023"
+  },
+  {
+    "id": "VE",
+    "nom": "Venezuela",
+    "status": "1989–2023"
+  },
+  {
+    "id": "VN",
+    "nom": "Vietnam",
+    "status": "1988"
+  },
+  {
+    "id": "YE",
+    "nom": "Yémen",
+    "status": "1988"
+  },
+  {
+    "id": "ZM",
+    "nom": "Zambie",
+    "status": "1988"
+  },
+  {
+    "id": "ZW",
+    "nom": "Zimbabwe",
+    "status": "1988"
+  },
+  {
+    "id": "EH",
+    "nom": "Sahara Marocain",
+    "status": "1988"
+  },
+  {
+    "id": "PS",
+    "nom": "Palestine",
+    "status": "1988"
+  },
+  {
+    "id": "SJ",
+    "nom": "Svalbard",
+    "status": "1989–2023"
+  },
+  {
+    "id": "GF",
+    "nom": "Guyane Française",
+    "status": "2025"
+  },
+  {
+    "id": "XK",
+    "nom": "Kosovo",
+    "status": "Ne reconnaît pas"
+  },
+  {
+    "id": "TW",
+    "nom": "Taïwan",
+    "status": "Ne reconnaît pas"
+  }
+
+]
