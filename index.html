@@ -23,7 +23,7 @@
       </a>
 
       <!-- Bouton pour ouvrir la fenêtre de contacts -->
-      <a href="#" class="bouton-contact">Nos contacts</a>
+      <a href="#" class="bouton-contact">Nous contacter</a>
     </div>
   </header>
 
@@ -69,10 +69,6 @@
       <div class="container">
         <h2 class="section-title">C’EST QUOI ?</h2>
 
-        <!-- Logo du projet -->
-        <div class="logo-palestats">
-          <img src="img/logo.png" alt="Logo Palestats">
-        </div>
 
         <!-- Contenu principal en deux colonnes -->
         <div class="card grid-2">
@@ -96,6 +92,53 @@
         </div>
       </div>
     </section>
+        <!-- ============================= -->
+<!-- SECTION : Carte reconnaissance -->
+<!-- ============================= -->
+<section id="carte-reconnaissance">
+  <div class="conteneur">
+    <div class="entete-carte">
+      <div class="bloc-titre-carte">
+        <h2>Qui reconnaît l’État palestinien ?</h2>
+        <p class="sous-texte">
+          156 pays sur 195 pays<br>
+          <span>Reconnaissent l’État palestinien</span>
+        </p>
+
+        <!--  Légende des couleurs -->
+        <ul class="legende-carte">
+          <li><span class="pastille couleur-1988"></span>1988</li>
+          <li><span class="pastille couleur-1989"></span>1989–2023</li>
+          <li><span class="pastille couleur-2024"></span>2024</li>
+          <li><span class="pastille couleur-2025"></span>2025</li>
+          <li><span class="pastille couleur-non"></span>Ne reconnaît pas</li>
+        </ul>
+      </div>
+
+      <div class="bloc-bouton-carte">
+        <div class="bouton-texte-carte">
+          <img src="img/icon-globe.png" alt="Icône globe" class="icone-globe">
+          <span class="texte-bouton-carte">Mode globe</span>
+        </div>
+
+        <button id="mode-globe" class="bouton-fleche-carte">
+          <img src="img/fleche-btn-carte.png" alt="Flèche" class="icone-fleche">
+        </button>
+      </div>
+    </div>
+
+    <section id="carte-palestine">
+      <div id="mapdiv"></div>
+    </section>
+     <!-- ===== Bouton source juste sous la carte ===== -->
+ <div class="source-carte">
+  <a href="https://www.lemonde.fr/les-decodeurs/article/2025/09/21/combien-de-pays-reconnaissent-l-existence-d-un-etat-palestinien_6234866_4355771.html" target="_blank">
+    Sources : lemonde.fr
+  </a>
+</div>
+
+  </div>
+</section>
   </main>
 
   <!-- ================= FOOTER ================= -->
@@ -173,6 +216,11 @@
   </div>
 
   <!-- ================= SCRIPT ================= -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Dark.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
