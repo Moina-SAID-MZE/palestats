@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-
   /* -----------------------------
      Animation des prénoms défilants
   ----------------------------- */
@@ -254,4 +252,5 @@ am5.ready(function() {
   }));
   
   }); // fin am5.ready
+
 
