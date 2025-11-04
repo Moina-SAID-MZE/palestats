@@ -133,19 +133,19 @@ a:hover {
 
 /* ============================    IMAGE BONHOMME    ============================ */
 .bloc-bonhomme {
-  position: relative;
-  border: 1px solid #1E1E1E;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 25px;
-}
-
+   position: relative;
+    border: 1px solid #1E1E1E; 
+    border-radius: 12px;
+     padding: 25px;
+      margin-bottom: 25px;
+     } 
+     
 .bonhomme {
-  position: relative;
-  width: 220px;
-  margin-left: 870px; 
-  margin-bottom: -30px;
-}
+       width: 350px; 
+       margin-left: 700px;
+       margin-bottom: -30px; 
+       margin-top: 20px;
+      }
 
 /* ============================   BOUTON RETOUR HAUT   ============================ */
 .top-btn {
@@ -312,3 +312,4 @@ html {
   transform: scale(1.15);
   filter: brightness(1.3);
 }
+
