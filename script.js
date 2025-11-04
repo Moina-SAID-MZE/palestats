@@ -133,15 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Lancer l'animation quand la section entre à l'écran
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) startAnimation();
-    });
-  }, { threshold: 0.3 });
-
-  const section = document.querySelector("#chiffres");
-  observer.observe(section);
-});
+  // Démarre tout de suite (sans attendre la visibilité)
+startAnimation();
 
 
 
@@ -303,6 +296,7 @@ am5.ready(function() {
   }));
   
   }); // fin am5.ready
+
 
 
 
