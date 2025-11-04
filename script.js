@@ -92,6 +92,57 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// chiffres qui defilent
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const valeurs = document.querySelectorAll(".valeur");
+  let animationLancee = false; // Empêche de rejouer plusieurs fois
+
+  const startAnimation = () => {
+    if (animationLancee) return;
+    animationLancee = true;
+
+    const duration = 2000; // ⇦ durée totale (5 secondes)
+    const steps = 100; // nombre d'incréments (plus → plus fluide)
+    const intervalTime = duration / steps;
+
+    const increments = [];
+
+    valeurs.forEach(el => {
+      const target = +el.getAttribute("data-target");
+      increments.push({
+        el,
+        target,
+        current: 0,
+        step: target / steps
+      });
+    });
+
+    const interval = setInterval(() => {
+      increments.forEach(item => {
+        item.current += item.step;
+        if (item.current >= item.target) item.current = item.target;
+        item.el.textContent = "+ " + Math.floor(item.current).toLocaleString("fr-FR");
+      });
+
+      // Vérifie si tout est terminé
+      if (increments.every(i => i.current >= i.target)) {
+        clearInterval(interval);
+      }
+    }, intervalTime);
+  };
+
+  // Lancer l'animation quand la section entre à l'écran
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) startAnimation();
+    });
+  }, { threshold: 0.3 });
+
+  const section = document.querySelector("#chiffres");
+  observer.observe(section);
+});
 
 
 // ============================================================
@@ -252,5 +303,6 @@ am5.ready(function() {
   }));
   
   }); // fin am5.ready
+
 
 
