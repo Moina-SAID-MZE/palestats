@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
 // chiffres qui defilent
 
 
@@ -143,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector("#chiffres");
   observer.observe(section);
 });
+
 
 
 // ============================================================
@@ -303,6 +303,7 @@ am5.ready(function() {
   }));
   
   }); // fin am5.ready
+
 
 
 
