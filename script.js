@@ -92,3 +92,166 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+
+
+// ============================================================
+// Carte interactive : Reconnaissance de l'État palestinien
+// ============================================================
+
+am5.ready(function() {
+
+  // --- Création du root ---
+  var root = am5.Root.new("mapdiv");
+  root.setThemes([am5themes_Dark.new(root)]);
+  
+  // Projections 2D et globe
+  var projection2D = am5map.geoMercator();
+  var projection3D = am5map.geoOrthographic();
+  
+  // --- Création de la carte (vue 2D par défaut) ---
+  var chart = root.container.children.push(am5map.MapChart.new(root, {
+      projection: projection2D,
+      panX: "translateX",    // déplacement horizontal pour carte 2D
+      panY: "translateY",    // déplacement vertical pour carte 2D
+      wheelY: "zoom",        // zoom à la molette
+      pinchZoom: true        // zoom tactile
+  }));
+  
+  // Zoom fluide et contrôlé
+  chart.set("zoomStep", 1.5);          // zoom progressif (1.5 = bon équilibre)
+  chart.set("wheelSensitivity", 0.5);  // sensibilité molette (0.5 = fluide)
+  chart.set("animationDuration", 300); // transitions douces mais rapides
+  chart.set("minZoomLevel", 1);        // zoom minimum (vue monde)
+  chart.set("maxZoomLevel", 16);       // zoom maximum (détails pays)
+  
+  // Activer l'interactivité
+  chart.chartContainer.set("wheelable", true);
+  
+  // --- Série des pays ---
+  var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+      geoJSON: am5geodata_worldLow,
+      exclude: ["AQ"] // pas d'Antarctique
+  }));
+  
+  // --- Couleurs selon le statut ---
+  var colorByStatus = {
+      "1988": am5.color(0xa2d39b),                 // vert clair
+      "1989–2023": am5.color(0x2c9c4b),           // vert moyen
+      "2024": am5.color(0x46c16a),                // vert vif
+      "2025": am5.color(0x004d22),                // vert foncé
+      "Ne reconnaît pas l'État palestinien": am5.color(0xe05a5a) // rouge
+  };
+  
+  // --- Chargement du JSON ---
+  fetch("data/reconnaissance-palestine.json")
+      .then(response => response.json())
+      .then(data => {
+          polygonSeries.data.setAll(data);
+  
+          polygonSeries.events.on("datavalidated", function() {
+              polygonSeries.mapPolygons.each(function(polygon) {
+                  var info = polygon.dataItem && polygon.dataItem.dataContext;
+                  if (info && info.status) {
+                      var statut = info.status;
+  
+                      // Uniformiser "Ne reconnaît pas"
+                      if (statut === "Ne reconnaît pas") {
+                          statut = "Ne reconnaît pas l'État palestinien";
+                      }
+  
+                      var couleur = colorByStatus[statut] || am5.color(0x555555);
+                      polygon.set("fill", couleur);
+                  }
+              });
+          });
+      })
+      .catch(() => console.log("Erreur lors du chargement des données JSON."));
+  
+  // --- Tooltip au survol ---
+  polygonSeries.mapPolygons.template.setAll({
+      tooltipText: "{nom}\nStatut : {status}",
+      interactive: true
+  });
+  
+  // ==============================
+  // Bouton : vue carte / vue globe
+  // ==============================
+  const boutonFleche = document.getElementById("mode-globe");
+  const texteBouton  = document.querySelector(".texte-bouton-carte");
+  const iconeGlobe   = document.querySelector(".icone-globe");
+  let estGlobe = false;
+  
+  if (boutonFleche && texteBouton && iconeGlobe) {
+      boutonFleche.addEventListener("click", () => {
+          estGlobe = !estGlobe;
+  
+          // Changer la projection ET les contrôles
+          if (estGlobe) {
+              chart.set("projection", projection3D);
+              chart.set("panX", "rotateX");  // rotation pour globe
+              chart.set("panY", "rotateY");
+          } else {
+              chart.set("projection", projection2D);
+              chart.set("panX", "translateX");  // déplacement pour carte
+              chart.set("panY", "translateY");
+          }
+  
+          // Changer le texte
+          texteBouton.textContent = estGlobe
+              ? 'Mode carte'
+              : 'Mode globe';
+  
+          // Changer l'icône
+          iconeGlobe.src = estGlobe
+              ? "img/icon-carte.png"
+              : "img/icon-globe.png";
+      });
+  } else {
+      console.log("Bouton globe : éléments HTML introuvables");
+  }
+  
+  // ==============================
+  // Légende cliquable
+  // ==============================
+  const itemsLegende = document.querySelectorAll(".legende-carte li");
+  let statutsMasques = new Set();
+  
+  function mettreAJourCarte() {
+      polygonSeries.mapPolygons.each((polygon) => {
+          const statut = polygon.dataItem?.dataContext?.status;
+          polygon.set("fillOpacity", statutsMasques.has(statut) ? 0.15 : 1);
+      });
+  }
+  
+  itemsLegende.forEach((item) => {
+      item.addEventListener("click", () => {
+          const statut = item.textContent.trim();
+  
+          if (statutsMasques.has(statut)) {
+              statutsMasques.delete(statut);
+              item.classList.remove("masque");
+          } else {
+              statutsMasques.add(statut);
+              item.classList.add("masque");
+          }
+  
+          mettreAJourCarte();
+      });
+  });
+  
+  // --- Crédit amCharts ---
+  chart.chartContainer.children.push(am5.Label.new(root, {
+      text: "© amCharts",
+      fontSize: 12,
+      fill: am5.color(0x888888),
+      x: am5.p100,
+      centerX: am5.p100,
+      y: am5.p100,
+      centerY: am5.p100,
+      dy: -5
+  }));
+  
+  }); // fin am5.ready
+
