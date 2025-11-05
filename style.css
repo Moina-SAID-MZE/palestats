@@ -583,13 +583,20 @@ p, a, li {
 }
 
 /* Pastèque décorative */
+@keyframes clignote {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.05); }
+}
+
 .footer-pasteque {
   position: absolute;
   top: -260px;
   right: -360px;
   width: 600px;
-  opacity: 0.6;
-  pointer-events: none;
+  cursor: pointer;
+  animation: clignote 2s infinite ease-in-out;
+  pointer-events: auto;
+  z-index: 10;
 }
 
 /* Bas du footer */
@@ -628,6 +635,82 @@ p, a, li {
 
 .footer-lien:hover::after {
   width: 100%;
+}
+/* Popup */
+.popup-pasteque {
+  display: none;
+  position: fixed;
+  bottom: 150px;
+  right: 300px;
+  z-index: 999;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Contenu du popup */
+.popup-content {
+  background: var(--fond);
+  border: 3px solid #1E1E1E;
+  border-radius: 8px;
+  padding: 25px 35px;
+  max-width: 380px;
+  color: var(--texte);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  text-align: left;
+  animation: apparition 0.3s ease;
+  position: relative;
+}
+
+/* Animation d’apparition douce */
+@keyframes apparition {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bouton de fermeture (croix) */
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--gris);
+  transition: color 0.2s;
+}
+.popup-close:hover {
+  color: var(--texte);
+}
+
+
+/* Zone contenant le texte et la flèche */
+.zone-indic-footer {
+  position: absolute;
+  right: -20px;
+  top: 60px; /* ajustable selon la position de ta pastèque */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transform: rotate(-8deg);
+  z-index: 15;
+}
+
+/* Texte "cliquez ici !" */
+.texte-indic {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.6rem;
+  color: var(--texte);
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+.fleche-footer {
+  width: 60px;
+  display: block;
+  transform: scaleX(-1) rotate(160deg);
+  position: relative;
+  top: -25px;   /* déplace vers le haut */
+  left: 25px;   /* déplace vers la droite */
 }
 
 /* ============================    FENÊTRE DE CONTACTS    ============================ */
@@ -760,5 +843,6 @@ p, a, li {
   transform: scale(1.15);
   filter: brightness(1.3);
 }
+
 
 
