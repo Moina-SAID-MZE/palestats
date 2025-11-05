@@ -7,9 +7,10 @@
 
   <!-- Feuille de style -->
   <link rel="stylesheet" href="style.css" />
-
   <!-- Police Manrope -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+      <!-- Police "Cliquez ici !" dans le foooter -->
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -174,25 +175,43 @@
 </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="footer-content">
-      <p class="footer-subtitle">UN PROJET DE MÉMOIRE ET DE DONNÉES.</p>
-      <h2 class="footer-title">
-        MERCI D’AVOIR
-        <img src="img/bouton.png" alt="Smiley" class="footer-smiley">
-        <br>PARCOURU PALESTATS
-      </h2>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-content">
+    <p class="footer-subtitle">UN PROJET DE MÉMOIRE ET DE DONNÉES.</p>
+    <h2 class="footer-title">
+      MERCI D’AVOIR
+      <img src="img/bouton.png" alt="Smiley" class="footer-smiley">
+      <br>PARCOURU PALESTATS
+    </h2>
 
-      <!-- Image décorative -->
-      <img src="img/pasteque-crayon.png" alt="Pastèque dessinée" class="footer-pasteque">
-    </div>
+    <!-- Image décorative (clicable) -->
+    <img src="img/pasteque-crayon.png" alt="Pastèque dessinée" class="footer-pasteque" id="footer-pasteque">
 
-    <div class="footer-bottom">
-      <a href="mention.html" class="footer-lien">Mentions légales</a>
-      <p class="footer-droits">© 2025 Palestats. Tous droits réservés.</p>
+<!-- Indication vers la pastèque -->
+<div class="zone-indic-footer">
+  <p class="texte-indic">cliquez ici !</p>
+  <img src="img/fleche-footer.png" alt="Flèche vers la pastèque" class="fleche-footer">
+</div>
+
+
+    <!-- Popup explicatif -->
+    <div class="popup-pasteque" id="popup-pasteque">
+      <div class="popup-content">
+        <span class="popup-close" id="close-popup">&times;</span>
+        <p>
+          🍉 Le symbole de la <strong>pastèque</strong> est devenu un emblème de solidarité avec la
+          <strong>Palestine</strong> : ses couleurs — rouge, vert, blanc et noir — rappellent celles du drapeau palestinien.
+        </p>
+      </div>
     </div>
-  </footer>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="mention.html" class="footer-lien">Mentions légales</a>
+    <p class="footer-droits">© 2025 Palestats. Tous droits réservés.</p>
+  </div>
+</footer>
 
   <!-- ================= FENÊTRE CONTACTS ================= -->
   <div class="fenetre" id="fenetre-contacts">
@@ -256,5 +275,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
