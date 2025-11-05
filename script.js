@@ -142,6 +142,22 @@ const observer = new IntersectionObserver((entries) => {
   const section = document.querySelector("#chiffres");
   observer.observe(section);
 });
+// animation pop up pasteque dans le footer 
+const pasteque = document.getElementById('footer-pasteque');
+  const popup = document.getElementById('popup-pasteque');
+  const closePopup = document.getElementById('close-popup');
+
+  pasteque.addEventListener('click', () => {
+    popup.style.display = 'flex';
+  });
+
+  closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) popup.style.display = 'none';
+  });
 
 
 
@@ -303,6 +319,7 @@ am5.ready(function() {
   }));
   
   }); // fin am5.ready
+
 
 
 
