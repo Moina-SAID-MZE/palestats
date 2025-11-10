@@ -309,6 +309,338 @@ p, a, li {
   }
 }
 
+/* ===================== SECTION TIMELINE  ===================== */
+
+#timeline {
+  padding: 100px 0 80px;
+  background: #0a0a0a;
+  color: #fff;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+/* Titre + sous-titre */
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.timeline-subtitle {
+  color: #888;
+  font-size: 18px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.timeline-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(45deg, var(--texte), var(--rouge));
+  -webkit-background-clip: text;             /*dégradé*/
+  -webkit-text-fill-color: transparent;
+}
+
+.timeline-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--rouge);
+  border-radius: 2px;
+}
+
+/* ===== Barre de dates ===== */
+
+.timeline-dates-container {
+  position: relative;
+  margin-bottom: 50px;
+  max-width: 100%;
+  padding-top: 10px;
+  padding-bottom: 35px;
+}
+
+
+.timeline-dates-container::after {
+  content: '';
+  position: absolute;
+  bottom: 58px;           
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #333;
+  z-index: 0;           
+}
+
+.timeline-dates-bar {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 0;
+  padding: 10px 30px 30px 30px;
+  overflow-x: auto;
+  overflow-y: visible;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* dates cliquables */
+
+.date-item {
+  position: relative;
+  color: #888;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 16px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  z-index: 2;             /* au-dessus de la barre */
+}
+
+/* petits points sur la barre */
+.date-item::before {
+  content: '';
+  position: absolute;
+  bottom: -9px;           /* pile sur la barre */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #444;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.date-item.active {
+  color: var(--texte);
+  font-weight: 700;
+  transform: scale(1.1);
+  background: rgba(138, 33, 33, 0.1);
+  border-color: var(--rouge);
+}
+
+.date-item.active::before {
+  background: var(--rouge);
+  box-shadow: 0 0 10px var(--rouge);
+}
+
+.date-item:hover:not(.active) {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #555;
+}
+
+/* ===== Carrousel des cartes ===== */
+
+.timeline-carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 50px;
+}
+
+.timeline-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* flèches gauche / droite */
+
+.nav-button {
+  background: #222;
+  border: 2px solid #333;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.nav-button:disabled {
+  opacity: 0.3;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: var(--rouge);
+  border-color: var(--rouge);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(138, 33, 33, 0.5);
+}
+
+
+
+.timeline-carousel-viewport {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    0 0 0 1px #333;
+  background: #111;
+}
+
+
+
+.timeline-carousel {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+}
+
+/* ===== Carte d’événement ===== */
+
+.timeline-card {
+  flex: 0 0 100%;          
+  min-width: 100%;
+  background: linear-gradient(145deg, #1b1b1b, #151515);
+  border-radius: 20px;
+  padding: 25px 35px 40px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 8px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* image dans la carte */
+
+.image-container {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  height: 230px;
+}
+
+.timeline-card img {
+  max-width: 100%;
+  max-height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* texte de la carte */
+
+.timeline-card .card-date {
+  color: var(--rouge);
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.timeline-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.timeline-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #d3d3d3;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+/* bouton lien  */
+
+.timeline-card .popup-link {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.timeline-card .link-circle {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-card .link-circle img {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.timeline-card .link-circle:hover {
+  background: var(--rouge);
+  border-color: var(--rouge);
+  box-shadow: 0 0 20px rgba(138, 33, 33, 0.5);
+}
+
+.timeline-card .link-circle:hover img {
+  filter: brightness(0) invert(1);
+  transform: scale(1.1);
+}
+
+/* ===== Barre de progression rouge sous la carte ===== */
+
+.timeline-progress {
+  width: 200px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  margin: 30px auto 0;
+}
+
+.timeline-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--rouge), #ff4444);
+  transition: width 0.5s ease;
+  border-radius: 2px;
+}
+
+
 /*  =================== SECTION : Carte reconnaissance  ============================= */
 
 
@@ -843,6 +1175,7 @@ p, a, li {
   transform: scale(1.15);
   filter: brightness(1.3);
 }
+
 
 
 
