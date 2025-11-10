@@ -61,7 +61,131 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
+/* === Timeline === */
+  fetch("data.json")
+    .then(r => {
+      if (!r.ok) throw new Error(`Erreur HTTP: ${r.status}`);
+      return r.json();
+    })
+    .then(events => {
+      const container = document.getElementById("timelineContainer");
+      if (!container) return;
 
+      // Structure principale
+      container.innerHTML = `
+        <div class="timeline-dates-container">
+          <div class="timeline-dates-bar"></div>
+        </div>
+        <div class="timeline-carousel-container">
+          <div class="timeline-wrapper">
+            <button class="nav-button" id="prevButton">&lt;</button>
+            <div class="timeline-carousel-viewport">
+              <div class="timeline-carousel"></div>
+            </div>
+            <button class="nav-button" id="nextButton">&gt;</button>
+          </div>
+          <div class="timeline-progress">
+            <div class="timeline-progress-bar"></div>
+          </div>
+        </div>
+      `;
+
+      // Sélection des éléments
+      const datesBar = container.querySelector('.timeline-dates-bar');
+      const carousel = container.querySelector('.timeline-carousel');
+      const prevButton = document.getElementById('prevButton');
+      const nextButton = document.getElementById('nextButton');
+      const progressBar = container.querySelector('.timeline-progress-bar');
+
+      let currentIndex = 0;
+
+      // Création des dates
+      events.forEach((event, index) => {
+        const dateItem = document.createElement("div");
+        dateItem.className = "date-item";
+        dateItem.textContent = event.date;
+        dateItem.dataset.index = index;
+        datesBar.appendChild(dateItem);
+      });
+
+      // Création des cartes
+      events.forEach(event => {
+        const card = document.createElement("div");
+        card.className = "timeline-card";
+        card.innerHTML = `
+          <div class="image-container">
+            <img src="${event.image}" alt="${event.title}" onerror="this.src='img/placeholder.jpg'">
+          </div>
+          <span class="card-date">${event.date}</span>
+          <h3>${event.title}</h3>
+          <p>${event.text}</p>
+          ${event.link ? `
+            <a href="${event.link}" target="_blank" class="popup-link">
+              <div class="link-circle">
+                <img src="img/lien.png" alt="Lien">
+              </div>
+            </a>` : ''}
+        `;
+        carousel.appendChild(card);
+      });
+
+
+
+      const updateTimeline = () => {
+        // Active la bonne date
+        document.querySelectorAll('.date-item').forEach((item, i) => {
+          item.classList.toggle('active', i === currentIndex);
+        });
+
+        // Met à jour la barre de progression
+        progressBar.style.width = `${((currentIndex + 1) / events.length) * 100}%`;
+
+        // Fait défiler la frise sans bouger la page
+        const activeDate = datesBar.children[currentIndex];
+        const scrollLeft = activeDate.offsetLeft - (datesBar.clientWidth / 2) + (activeDate.offsetWidth / 2);
+        datesBar.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
+
+        // Gère les boutons
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === events.length - 1;
+      };
+
+      const goToSlide = index => {
+        if (index < 0 || index >= events.length) return;
+        currentIndex = index;
+        carousel.style.transform = `translateX(${-index * 100}%)`;
+        updateTimeline();
+      };
+
+  
+      prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+      nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+      datesBar.addEventListener('click', e => {
+        if (e.target.classList.contains('date-item')) {
+          goToSlide(+e.target.dataset.index);
+        }
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+        if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+      });
+
+      window.addEventListener('resize', updateTimeline);
+
+      // Initialisation
+      goToSlide(0);
+    })
+    .catch(() => {
+      const container = document.getElementById("timelineContainer");
+      if (container)
+        container.innerHTML = `
+          <p style="text-align:center;color:var(--rouge);padding:40px;">
+            Erreur de chargement des données.<br>Vérifie le fichier <b>data.json</b>.
+          </p>`;
+    });
+  
   /* -----------------------------
      Fenêtre de contacts
   ----------------------------- */
@@ -319,6 +443,7 @@ am5.ready(function() {
   }));
   
   }); // fin am5.ready
+
 
 
 
