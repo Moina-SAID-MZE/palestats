@@ -1,0 +1,138 @@
+[
+  {
+    "id": "evenement1",
+    "date": "1917",
+    "title": "Déclaration Balfour",
+    "text": "Arthur Balfour, secrétaire d’État britannique aux Affaires Étrangères, adresse une lettre ouverte au Lord Lionel Walter Rothschild, figure du mouvement sioniste, et déclare être en faveur de l’établissement d’un « foyer national pour le peuple juif » en Palestine qui jusqu’ici faisait partie de l’Empire Ottoman.",
+    "image": "img/1917.png",
+    "link": "https://www.diploweb.com/Comment-comprendre-le-conflit-israelo-palestinien-de-ses-origines-au-7-octobre-2023.html"
+  },
+  {
+    "id": "evenement2",
+    "date": "1920",
+    "title": "Mandat Britanique",
+    "text": "Lors la chute de l’Empire Ottoman, la Société Des Nations (SDN) attribue au Royaume-Uni un mandat sur la Palestine. Les Britanniques administrent le territoire.",
+    "image": "img/1920.png",
+    "link": "https://www.diploweb.com/Comment-comprendre-le-conflit-israelo-palestinien-de-ses-origines-au-7-octobre-2023.html"
+  },
+  {
+    "id": "evenement3",
+    "date": "29 nov 1947",
+    "title": "Résolution 181",
+    "text": "Le plan de partage de la Palestine est adopté (résolution 181), malgré l’opposition de tous les États arabes. Ce plan prévoit la division de la Palestine en trois secteurs : le secteur arabe (45%), le secteur juif (55%) et Jérusalem sous tutelle de l’ONU.",
+    "image": "img/1947.cms",
+    "link": "https://fr.wikipedia.org/wiki/Plan_de_partage_de_la_Palestine"
+  },
+  {
+    "id": "evenement4",
+    "date": "14 mai 1948",
+    "title": "Indépendance de l’État Israélien",
+    "text": "David Ben Gourion proclame l’indépendance de l’État d’Israël.",
+    "image": "img/1948.jpg",
+    "link": "https://fr.wikipedia.org/wiki/D%C3%A9claration_d%27ind%C3%A9pendance_de_l%27%C3%89tat_d%27Isra%C3%ABl"
+  },
+  {
+    "id": "evenement5",
+    "date": "1947-1949",
+    "title": "La Nakba",
+    "text": "À la suite du plan de partage de l’ONU et de la création d’Israël, plus de 800 000 Palestiniens sont expulsés ou fuient leurs terres. Des centaines de villages sont détruits, marquant le début de l’exil du peuple palestinien et la perte de leur patrie. Cet épisode, appelé Nakba (« catastrophe »), reste un traumatisme majeur de leur histoire.",
+    "image": "img/1948-49.jpg",
+    "link": "https://www.radiofrance.fr/franceculture/la-nakba-la-grande-catastrophe-du-peuple-palestinien-6697448"
+  },
+  {
+    "id": "evenement6",
+    "date": "28 mai 1964",
+    "title": "L’Organisation de Libération de la Palestine",
+    "text": "L’Organisation de Libération de la Palestine (OLP) est créée afin de représenter le peuple palestinien et organiser la résistance contre Israël et la récupération de leur terre. Yasser Arafat prend la tête de l’organisation.",
+    "image": "img/1964.jpg",
+    "link": "https://www.herodote.net/almanach-ID-3688.php"
+  },
+  {
+    "id": "evenement7",
+    "date": "5–10 juin 1967",
+    "title": "Guerre des six jours",
+    "text": "Israël lance une offensive contre l’Égypte et ses alliés arabes. En six jours, il remporte une victoire totale et occupe la Cisjordanie, Gaza, le Golan, le Sinaï et Jérusalem-Est. Si les pays voisins récupèrent ensuite leurs terres, les Palestiniens ne retrouvent jamais les leurs. L’ONU adopte alors la résolution 242, condamnant la conquête de territoires par la guerre.",
+    "image": "img/1967.webp",
+    "link": "https://enseignants.lumni.fr/fiche-media/00000000186/la-guerre-des-six-jours.html"
+  },
+  {
+    "id": "evenement8",
+    "date": "6-24 octobre 1973",
+    "title": "Guerre du Kippour",
+    "text": "L’Égypte et la Syrie lancent une attaque surprise contre Israël pendant la fête juive de Yom Kippour. Israël reprend vite l’avantage. À la suite du conflit, un accord de paix est signé à Camp David : Israël rend le Sinaï à l’Égypte. L’ONU adopte la résolution 338, appelant à l’application de la 242 et à l’ouverture de négociations.",
+    "image": "img/1973.jpg",
+    "link": "https://www.herodote.net/6_24_octobre_1973-evenement-19731006.php"
+  },
+  {
+    "id": "evenement9",
+    "date": "1987",
+    "title": "La guerre des pierres",
+    "text": "Le peuple palestinien se soulève contre l’occupation israélienne, marquant le début de la première intifada. Appelée « guerre des pierres » car de nombreux jeunes Palestiniens affrontent les soldats israéliens avec des pierres, elle dure jusqu’en 1993.’est durant cette période que naît le Hamas, inspiré par les Frères musulmans et critiquant l’OLP, jugée trop conciliante envers Israël. Le mouvement prône une résistance armée pour libérer la Palestine.",
+    "image": "img/1987.jpg",
+    "link": "https://enseignants.lumni.fr/fiche-media/00000005376/les-debuts-de-la-premiere-intifada.html"
+  },
+  {
+    "id": "evenement10",
+    "date": "15 novembre 1988",
+    "title": "Déclaration d'indépendance de la Palestine ",
+    "text": "Yasser Arafat, qui jusqu’ici refusait le plan de partage de l’ONU et prônait la résistance armée, annonce la création d’un État palestinien sur le principe des résolutions 181, 242 et 338 ; et de ce fait, reconnait implicitement Israël.",
+    "image": "img/1988.jpg",
+    "link": "https://www.ina.fr/ina-eclaire-actu/yasser-arafat-palestine-dirigeant-proche-orient-israel-macron-chirac"
+  },
+  {
+    "id": "evenement11",
+    "date": "13 septembre 1993",
+    "title": "Accords d'Oslo",
+    "text": "Une poignée de main historique entre Yasser Arafat (OLP) et Yitzhak Rabin (Israël) marque les Accords d’Oslo. Négociés en secret, ils instaurent l’Autorité Palestinienne et prévoient une transition de 5 ans vers un futur État palestinien. Mais cette transition n’a jamais abouti, et les accords n’ont pas été pleinement appliqués.",
+    "image": "img/1993.jpg",
+    "link": "https://www.politis.fr/articles/2023/09/accords-doslo-la-mort-dune-illusion/"
+  },
+  {
+    "id": "evenement12",
+    "date": "septembre 2000",
+    "title": "Seconde intifada",
+    "text": "Déclenchée après la visite provocatrice d’Ariel Sharon sur l’esplanade des Mosquées à Jérusalem, la seconde intifada marque une nouvelle révolte palestinienne contre l’occupation israélienne. Plus violente que la première, elle fait des milliers de morts des deux côtés. Le conflit entraîne un durcissement de la répression et la construction du mur de séparation en Cisjordanie.",
+    "image": "img/2000.jpg",
+    "link": "https://enseignants.lumni.fr/fiche-media/00000000213/2000-la-seconde-intifada.html"
+  },
+  {
+    "id": "evenement13",
+    "date": "2005",
+    "title": "Désengagement israélien de Gaza",
+    "text": "Israël se retire unilatéralement de la bande de Gaza, évacuant ses colons et son armée après près de 40 ans d’occupation. Le contrôle des frontières, de l’espace aérien et maritime reste cependant entre les mains d’Israël. Ce retrait marque la fin officielle de l’occupation directe, mais Gaza demeure sous blocus et isolement.",
+    "image": "img/2005.jpg",
+    "link": "https://www.rfi.fr/fr/connaissances/20250816-il-y-a-vingt-ans-l-arm%C3%A9e-isra%C3%A9lienne-se-d%C3%A9sengageait-unilat%C3%A9ralement-de-la-bande-de-gaza"
+  },
+  {
+    "id": "evenement14",
+    "date": "2006",
+    "title": "Victoire du Hamas aux élections",
+    "text": "Les élections législatives palestiniennes sont remportées par le Hamas, reconnues comme libres et démocratiques par les observateurs internationaux. Mais la communauté internationale refuse d’en reconnaître le résultat, faisant pression sur l’Autorité Palestinienne pour empêcher le Hamas de gouverner, ce qui accentue la division politique palestinienne.",
+    "image": "img/2006.jpg",
+    "link": "https://www.la-croix.com/Actualite/Monde/Victoire-ecrasante-du-Hamas-_NG_-2006-01-26-512487"
+  },
+  {
+    "id": "evenement15",
+    "date": "2007",
+    "title": "Division entre Gaza et la Cisjordanie",
+    "text": "Après des tensions croissantes entre le Hamas et le Fatah, le Hamas prend le contrôle de la bande de Gaza par la force. Depuis, la Palestine est divisée : le Hamas gouverne Gaza, tandis que le Fatah contrôle la Cisjordanie via l’Autorité Palestinienne. Cette fracture politique affaiblit l’unité du peuple palestinien et complique tout processus de paix.",
+    "image": "img/2007.svg",
+    "link": "https://enseignants.lumni.fr/fiche-media/00000001252/la-prise-du-pouvoir-par-le-hamas-a-gaza.html"
+  },
+  {
+    "id": "evenement16",
+    "date": "7 octobre 2023",
+    "title": "Attaque du Hamas",
+    "text": "Le 7 octobre 2023, une attaque du Hamas contre Israël déclenche une nouvelle guerre. L’offensive israélienne provoque une crise humanitaire majeure à Gaza, avec des milliers de morts civils et une destruction massive. Pour les Palestiniens, cet épisode incarne une tragédie sans précédent et la poursuite de leur souffrance sous occupation.",
+    "image": "img/2023.jpeg",
+    "link": "https://www.lemonde.fr/international/article/2023/10/07/gaza-pourquoi-le-hamas-a-decide-de-briser-le-statu-quo-et-de-defier-israel_6193034_3210.html"
+  },
+  {
+    "id": "evenement17",
+    "date": "2021",
+    "title": "Intifada de l'unité",
+    "text": "En mai 2021, les tensions à Jérusalem-Est, notamment les expulsions à Sheikh Jarrah et les affrontements à la mosquée Al-Aqsa, déclenchent une nouvelle guerre entre Israël et le Hamas. Pendant onze jours, Gaza est lourdement bombardée, causant des centaines de morts et d’immenses destructions. Cet événement, surnommé « l’Intifada de l’unité », voit les Palestiniens de Gaza, de Cisjordanie, de Jérusalem et d’Israël se mobiliser ensemble pour défendre leurs droits et leur terre.",
+    "image": "img/2021.webp",
+    "link": "https://www.bbc.com/afrique/monde-59810237"
+  }
+]
