@@ -118,25 +118,17 @@
     "text": "Après des tensions croissantes entre le Hamas et le Fatah, le Hamas prend le contrôle de la bande de Gaza par la force. Depuis, la Palestine est divisée : le Hamas gouverne Gaza, tandis que le Fatah contrôle la Cisjordanie via l’Autorité Palestinienne. Cette fracture politique affaiblit l’unité du peuple palestinien et complique tout processus de paix.",
     "image": "img/2007.svg",
     "link": "https://enseignants.lumni.fr/fiche-media/00000001252/la-prise-du-pouvoir-par-le-hamas-a-gaza.html"
-  },
+  }, 
   {
     "id": "evenement16",
-    "date": "7 octobre 2023",
-    "title": "Attaque du Hamas",
-    "text": "Le 7 octobre 2023, une attaque du Hamas contre Israël déclenche une nouvelle guerre. L’offensive israélienne provoque une crise humanitaire majeure à Gaza, avec des milliers de morts civils et une destruction massive. Pour les Palestiniens, cet épisode incarne une tragédie sans précédent et la poursuite de leur souffrance sous occupation.",
-    "image": "img/2023.jpeg",
-    "link": "https://www.lemonde.fr/international/article/2023/10/07/gaza-pourquoi-le-hamas-a-decide-de-briser-le-statu-quo-et-de-defier-israel_6193034_3210.html"
-  },
-  {
-    "id": "evenement17",
     "date": "2021",
     "title": "Intifada de l'unité",
     "text": "En mai 2021, les tensions à Jérusalem-Est, notamment les expulsions à Sheikh Jarrah et les affrontements à la mosquée Al-Aqsa, déclenchent une nouvelle guerre entre Israël et le Hamas. Pendant onze jours, Gaza est lourdement bombardée, causant des centaines de morts et d’immenses destructions. Cet événement, surnommé « l’Intifada de l’unité », voit les Palestiniens de Gaza, de Cisjordanie, de Jérusalem et d’Israël se mobiliser ensemble pour défendre leurs droits et leur terre.",
     "image": "img/2021.webp",
     "link": "https://www.bbc.com/afrique/monde-59810237"
   },
-   {
-    "id": "evenement16",
+  {
+    "id": "evenement17",
     "date": "7 octobre 2023",
     "title": "Attaque du Hamas",
     "text": "Le 7 octobre 2023, une attaque du Hamas contre Israël déclenche une nouvelle guerre. L’offensive israélienne provoque une crise humanitaire majeure à Gaza, avec des milliers de morts civils et une destruction massive. Pour les Palestiniens, cet épisode incarne une tragédie sans précédent et la poursuite de leur souffrance sous occupation.",
