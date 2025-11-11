@@ -235,8 +235,7 @@ p, a, li {
 .sous-titre {
   font-size: 13px;
   color: #d3d3d3;
-  margin-left: 12%;
-  text-align: left;
+  padding-right: 660px;   
 }
 
 .titre-section {
@@ -1364,6 +1363,7 @@ hr {
   transform: scale(1.15);
   filter: brightness(1.3);
 }
+
 
 
 
