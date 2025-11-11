@@ -639,6 +639,185 @@ p, a, li {
   transition: width 0.5s ease;
   border-radius: 2px;
 }
+/* ==================== SECTION DESSIN MORTS ======================================*/
+
+.memories {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.text-title {
+  text-align: left;
+  padding-left: 40px;      
+}
+
+.sous-titre {  
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  color: #a3a3a3;
+  letter-spacing: 0.5px;
+  margin-left: 5px;   
+  
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 60px;
+  gap: 40px;
+}
+
+.dessin {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.dessin img {
+  height: 600px; 
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+.bloc-stats {
+  flex: 1.2;
+  background: #121212;
+  border: 1px solid #242424;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}  
+
+.bloc-haut h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.children {
+  color: #c73d3d;
+  font-size: 3rem;
+  font-weight: 600;
+text-align: center;
+margin-top: -15px;
+margin-bottom: -10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #2c2c2c;
+  margin: 15px 0;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.icon {
+  text-align: center;
+  cursor: pointer;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1.5px solid #d0d0d0;
+  background-color: #f4f3ec; 
+  transition: all 0.25s ease;
+  width: 100px;
+  height: 120px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  background-color: #ecebe5;
+}
+
+.icon p {
+  font-size: 0.75rem;
+  color: #c73d3d;
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.icon span {
+  display: block;
+  color: #c73d3d;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.icon.active {
+  border: 1.5px solid #c73d3d;
+  background-color: #141414;
+}
+
+.icone.active p,
+.icone.active span {
+  color: #fff;
+}
+
+.icone.active img {
+  transform: scale(1.05);
+}
+
+.low-bloc {
+  margin-top: 30px;
+  background: #0f0f0f;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #1a1a1a;
+}
+
+.low-bloc h3 {
+  font-size: 2rem;
+}
+
+.total {
+  color: #1fd060;
+  font-weight: 700;
+}
+
+.low-text {
+  font-size: 1rem;
+  color: #a3a3a3;
+  margin-top: 10px;
+}
+
+.source {
+  background: #111;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 12px;
+  font-size: 0.7rem;
+  color: #999;
+}
+
+
+
 
 
 /*  =================== SECTION : Carte reconnaissance  ============================= */
@@ -1175,6 +1354,7 @@ p, a, li {
   transform: scale(1.15);
   filter: brightness(1.3);
 }
+
 
 
 
