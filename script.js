@@ -284,6 +284,49 @@ const pasteque = document.getElementById('footer-pasteque');
   });
 
 
+// ==============================
+// DESSIN MORTS
+// ==============================
+
+const boutons = document.querySelectorAll('.icon');
+const imageDessin = document.getElementById('imageDessin');
+const titre = document.querySelector('.bloc-haut h2');
+const nombre = document.querySelector('.children');
+
+boutons.forEach((bouton) => {
+  bouton.addEventListener('click', () => {
+   
+    boutons.forEach(b => {
+      b.classList.remove('active');
+      const img = b.querySelector('img');
+      let nom = img.src.split('/').pop(); 
+      nom = nom.replace('-rouge.png', '').replace('-gris.png', '');
+      img.src = `img/${nom}-gris.png`;
+    });
+
+    // Active le bouton
+    bouton.classList.add('active');
+
+    // Changer l'image principale
+    const nouvelleImage = bouton.getAttribute('data-image');
+    const nouveauID = bouton.getAttribute('data-id');
+    imageDessin.src = nouvelleImage;
+
+    imageDessin.classList.remove('dessin-enfant', 'dessin-homme', 'dessin-femme');
+    // Ajoute le nouveau dessin
+    imageDessin.classList.add(nouveauID);
+
+    // Change le titre et le nombre
+    titre.textContent = bouton.getAttribute('data-titre');
+    nombre.textContent = bouton.getAttribute('data-nombre');
+
+    // Change l'icône active en rouge
+    const icone = bouton.querySelector('img');
+    let nomActive = icone.src.split('/').pop();
+    nomActive = nomActive.replace('-gris.png', '').replace('-rouge.png', '');
+    icone.src = `img/${nomActive}-rouge.png`;
+  });
+});
 
 // ============================================================
 // Carte interactive : Reconnaissance de l'État palestinien
@@ -443,6 +486,7 @@ am5.ready(function() {
   }));
   
   }); // fin am5.ready
+
 
 
 
