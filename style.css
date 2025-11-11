@@ -164,6 +164,15 @@ p, a, li {
 }
 
 /* ============================    PRÉSENTATION    ============================ */
+.colored-title span:nth-child(1){
+  color:rgb(77, 199, 77);
+}
+.colored-title span:nth-child(2){
+  color:white;
+}.colored-title span:nth-child(3){
+  color:rgb(222, 58, 58);
+}
+
 #presentation {
   background: #0e0e0e;
   color: #e6e6e6;
@@ -1354,6 +1363,7 @@ hr {
   transform: scale(1.15);
   filter: brightness(1.3);
 }
+
 
 
 
