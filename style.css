@@ -164,6 +164,7 @@ p, a, li {
 }
 
 /* ============================    PRÉSENTATION    ============================ */
+
 .colored-title span:nth-child(1){
   color:rgb(77, 199, 77);
 }
@@ -1363,6 +1364,7 @@ hr {
   transform: scale(1.15);
   filter: brightness(1.3);
 }
+
 
 
 
