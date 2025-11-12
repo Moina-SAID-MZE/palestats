@@ -74,7 +74,7 @@ p, a, li {
   overflow: hidden;
 }
 .intro .container {
-  position: relative; /* ✅ le parent devient la référence de la pastèque */
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
@@ -219,7 +219,7 @@ p, a, li {
 
 .texte-presentation {
   background: #1b1b1b;
-  padding: 25px;
+  padding: 22px;
   border-radius: 12px;
   font-size: 15px;
 }
@@ -239,7 +239,8 @@ p, a, li {
 .sous-titre {
   font-size: 13px;
   color: #d3d3d3;
-  padding-right: 660px;   
+ padding-right: 0;
+text-align: center;
 }
 
 .titre-section {
@@ -247,7 +248,9 @@ p, a, li {
   font-weight: 700;
   margin-bottom: 70px;
   text-align: left;
-  margin-left: 12%;
+  margin-left: 0;
+text-align: center;
+
 }
 
 .grille-chiffres {
@@ -262,7 +265,7 @@ p, a, li {
   background: url("img/rectangle-chiffres.png") center/cover no-repeat;
   border-radius: 14px; /* arrondi plus marqué */
   border: 3px solid rgb(255, 255, 255); /* contour blanc léger */
-  padding: 24px 40px;
+  padding: 20px 25px;
   max-width: 400px;
   width: 100%;
   min-height: 80px;
@@ -457,7 +460,7 @@ p, a, li {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
-  padding: 0 50px;
+  padding: 0 30px;
 }
 
 .timeline-wrapper {
@@ -532,7 +535,7 @@ p, a, li {
   position: relative;
   box-sizing: border-box;
   border: 1px solid #333;
-  min-height: 320px;
+  min-height: 350px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -549,7 +552,8 @@ p, a, li {
   justify-content: center;
   align-items: center;
   background: transparent;
-  height: 230px;
+  height: auto;
+min-height: 180px;
 }
 
 .timeline-card img {
@@ -692,18 +696,18 @@ h1 {
 }
 
 .dessin img {
-  height: 600px; 
-  max-width: 100%;
+  width: 100%;
+  max-width: 450px;   /* taille stable */
+  height: auto;
   object-fit: contain;
 }
-
 
 .bloc-stats {
   flex: 1.2;
   background: #121212;
   border: 1px solid #242424;
   border-radius: 12px;
-  padding: 30px;
+  padding: 22px;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
 }  
 
@@ -714,7 +718,7 @@ h1 {
 
 .children {
   color: #c73d3d;
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 600;
 text-align: center;
 margin-top: -15px;
@@ -1085,14 +1089,14 @@ hr {
   color: var(--gris);
   letter-spacing: 1px;
   margin-bottom: 20px;
-  margin-left: -50px;
+  margin-left: 0;
 }
 
 .footer-title {
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-left: -50px;
+  margin-left: 0;
 }
 
 .footer-smiley {
@@ -1364,12 +1368,529 @@ hr {
   filter: brightness(1.3);
 }
 
+/* ======================================================================== */
+/* ============================  RESPONIVE  ============================ */
+/* ======================================================================= */
+
+/* ===========================
+   RESPONSIVE – SECTION INTRO
+=========================== */
+
+@media (max-width: 992px) {
+
+  .intro .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 25px;
+    padding: 0 20px;
+  }
+
+  .bloc-gauche {
+    align-items: center;
+  }
+
+  .titre-gauche {
+    font-size: 26px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .texte {
+    font-size: 15px;
+    max-width: 95%;
+    margin: 10px auto 20px;
+  }
+
+  .texte-bouton {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bouton img {
+    width: 85px;
+  }
+
+  .pasteque {
+    width: 140px;
+    right: 10px;
+    top: 10%;
+    opacity: 0.4;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto 0;
+  }
+}
+
+/* PETIT MOBILE */
+@media (max-width: 600px) {
+  .titre-gauche { font-size: 22px; }
+  .pasteque { width: 110px; opacity: 0.3; }
+  .bouton img { width: 75px; }
+  .texte { font-size: 14px; }
+}
+
+/* ===========================
+   RESPONSIVE – SECTION PRÉSENTATION
+=========================== */
+
+@media (max-width: 992px) {
+
+  /* Passe en 1 colonne */
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .image-drapeau img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .texte-presentation {
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .colored-title {
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
+/* Mobile petit */
+@media (max-width: 600px) {
+
+  .image-drapeau img {
+    max-width: 100%;
+  }
+
+  .texte-presentation {
+    font-size: 13px;
+  }
+
+  .colored-title {
+    font-size: 24px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE – SECTION TIMELINE
+=========================== */
+
+@media (max-width: 992px) {
+
+  /* Titre */
+  .timeline-title {
+    font-size: 2rem;
+  }
+
+  /* Conteneur des dates */
+  .timeline-dates-container {
+    padding-bottom: 20px;
+  }
+
+  .timeline-dates-bar {
+    gap: 20px;
+    padding: 10px 20px 20px 20px;
+  }
+
+  .date-item {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .date-item::before {
+    width: 8px;
+    height: 8px;
+    bottom: -7px;
+  }
+
+  /* Carrousel */
+  .timeline-carousel-container {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .timeline-carousel {
+    min-height: 380px;
+  }
+
+  .timeline-card {
+    padding: 20px;
+    min-height: 360px;
+  }
+
+  .timeline-card h3 {
+    font-size: 18px;
+  }
+
+  .timeline-card p {
+    font-size: 14px;
+  }
+
+  .image-container {
+    height: 180px;
+  }
+
+  .timeline-card img {
+    max-height: 180px;
+  }
+}
+
+/* ==== MOBILE PETIT ==== */
+@media (max-width: 600px) {
+
+  .timeline-title {
+    font-size: 1.6rem;
+  }
+
+  .timeline-dates-bar {
+    gap: 16px;
+  }
+
+  .date-item {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .image-container {
+    height: 150px;
+  }
+
+  .timeline-card img {
+    max-height: 150px;
+  }
+
+  .timeline-card {
+    padding: 18px;
+  }
+}
 
 
+/* ===========================
+   RESPONSIVE – SECTION CHIFFRES
+=========================== */
+
+@media (max-width: 992px) {
+
+  #chiffres {
+    padding: 70px 20px;
+  }
+
+  .sous-titre {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .titre-section {
+    text-align: center;
+    margin-left: 0;
+    font-size: 24px;
+  }
+
+  .grille-chiffres {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .bloc-chiffre {
+    flex-direction: column;
+    text-align: center;
+    padding: 18px;
+  }
+
+  .valeur {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+}
+
+/* Petit mobile */
+@media (max-width: 600px) {
+
+  .titre-section {
+    font-size: 20px;
+  }
+
+  .valeur {
+    font-size: 26px;
+  }
+
+  .texte {
+    font-size: 13px;
+  }
+}
 
 
+/* ===========================
+   RESPONSIVE – SECTION POUR NE PAS OUBLIER
+=========================== */
+
+@media (max-width: 992px) {
+
+  .content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .text-title {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .dessin img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .bloc-stats {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .bloc-haut h2 {
+    font-size: 1.6rem;
+  }
+
+  .children {
+    font-size: 2rem;
+  }
+
+  .icons {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .icon {
+    width: 90px;
+    height: 110px;
+    padding: 12px;
+  }
+
+  .icon img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Petit mobile */
+@media (max-width: 600px) {
+
+  .dessin img {
+    max-width: 100%;
+  }
+
+  .bloc-haut h2 {
+    font-size: 1.4rem;
+  }
+
+  .children {
+    font-size: 1.8rem;
+  }
+
+  .low-bloc h3 {
+    font-size: 1.6rem;
+  }
+
+  .low-text {
+    font-size: 0.9rem;
+  }
+}
 
 
+/* Desktop – taille uniforme des dessins */
+@media (min-width: 992px) {
+  .dessin img {
+    height: 550px;      /* même hauteur pour les 3 images */
+    width: auto;        /* respecte les proportions */
+    object-fit: contain;
+  }
 
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+/* ÉCRAN MOYEN — stabiliser la taille des dessins */
+@media (min-width: 600px) and (max-width: 991px) {
+  .dessin img {
+    max-height: 450px;   /* Taille idéale pour écrans moyens */
+    max-width: 70%;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .content {
+    flex-direction: column; /* met l’image au-dessus pour éviter écrasement */
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .bloc-stats {
+    width: 100%;
+  }
+}
+
+/* ===========================
+   RESPONSIVE – SECTION CARTE RECONNAISSANCE
+=========================== */
+
+@media (max-width: 992px) {
+
+  #carte-reconnaissance {
+    padding: 70px 0;
+  }
+
+  #carte-reconnaissance .conteneur {
+    padding: 0 20px;
+  }
+
+  .entete-carte {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .bloc-titre-carte h2 {
+    font-size: 26px;
+  }
+
+  .bloc-titre-carte .sous-texte {
+    font-size: 14px;
+  }
+
+  .bloc-bouton-carte {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  .bouton-texte-carte {
+    padding: 10px 16px;
+  }
+
+  .texte-bouton-carte {
+    font-size: 14px;
+  }
+
+  #mapdiv {
+    height: 420px;
+  }
+
+  .legende-carte {
+    gap: 10px;
+    font-size: 13px;
+  }
+}
+
+/* MOBILE PETIT – CARTE */
+@media (max-width: 600px) {
+
+  .entete-carte {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bloc-titre-carte h2 {
+    font-size: 22px;
+  }
+
+  .bloc-titre-carte .sous-texte {
+    font-size: 13px;
+  }
+
+  .bloc-bouton-carte {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bouton-texte-carte {
+    padding: 8px 14px;
+  }
+
+  #mapdiv {
+    height: 340px;
+  }
+
+  .legende-carte {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===========================
+   RESPONSIVE – FOOTER
+=========================== */
+
+@media (max-width: 992px) {
+
+  .footer {
+    padding: 50px 30px 30px;
+  }
+
+  .footer-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .footer-subtitle {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-pasteque {
+    width: 350px;
+    top: -180px;
+    right: -200px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+/* MOBILE PETIT */
+@media (max-width: 600px) {
+
+  .footer-title {
+    font-size: 1.9rem;
+  }
+
+  .footer-pasteque {
+    width: 240px;
+    top: -120px;
+    right: -120px;
+  }
+
+  .zone-indic-footer {
+    right: 0;
+    top: -20px;
+    transform: scale(0.7) rotate(-8deg);
+  }
+}
 
 
