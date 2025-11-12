@@ -214,20 +214,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
+//======================
+//======================
 // chiffres qui defilent
+//======================
+//======================
 
-
+// CHIFFRES QUI DÉFILENT — RELANCE À CHAQUE SCROLL
 document.addEventListener("DOMContentLoaded", () => {
   const valeurs = document.querySelectorAll(".valeur");
-  let animationLancee = false; // Empêche de rejouer plusieurs fois
 
   const startAnimation = () => {
-    if (animationLancee) return;
-    animationLancee = true;
+    // Réinitialise les valeurs à 0
+    valeurs.forEach(el => el.textContent = "0");
 
-    const duration = 2000; // ⇦ durée totale (5 secondes)
-    const steps = 100; // nombre d'incréments (plus → plus fluide)
+    const duration = 2000;
+    const steps = 100;
     const intervalTime = duration / steps;
 
     const increments = [];
@@ -249,15 +251,14 @@ document.addEventListener("DOMContentLoaded", () => {
         item.el.textContent = "+ " + Math.floor(item.current).toLocaleString("fr-FR");
       });
 
-      // Vérifie si tout est terminé
       if (increments.every(i => i.current >= i.target)) {
         clearInterval(interval);
       }
     }, intervalTime);
   };
 
-  // Lancer l'animation quand la section entre à l'écran
-const observer = new IntersectionObserver((entries) => {
+  // Observez l'entrée dans #chiffres
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) startAnimation();
     });
@@ -266,67 +267,7 @@ const observer = new IntersectionObserver((entries) => {
   const section = document.querySelector("#chiffres");
   observer.observe(section);
 });
-// animation pop up pasteque dans le footer 
-const pasteque = document.getElementById('footer-pasteque');
-  const popup = document.getElementById('popup-pasteque');
-  const closePopup = document.getElementById('close-popup');
 
-  pasteque.addEventListener('click', () => {
-    popup.style.display = 'flex';
-  });
-
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) popup.style.display = 'none';
-  });
-
-
-// ==============================
-// DESSIN MORTS
-// ==============================
-
-const boutons = document.querySelectorAll('.icon');
-const imageDessin = document.getElementById('imageDessin');
-const titre = document.querySelector('.bloc-haut h2');
-const nombre = document.querySelector('.children');
-
-boutons.forEach((bouton) => {
-  bouton.addEventListener('click', () => {
-   
-    boutons.forEach(b => {
-      b.classList.remove('active');
-      const img = b.querySelector('img');
-      let nom = img.src.split('/').pop(); 
-      nom = nom.replace('-rouge.png', '').replace('-gris.png', '');
-      img.src = `img/${nom}-gris.png`;
-    });
-
-    // Active le bouton
-    bouton.classList.add('active');
-
-    // Changer l'image principale
-    const nouvelleImage = bouton.getAttribute('data-image');
-    const nouveauID = bouton.getAttribute('data-id');
-    imageDessin.src = nouvelleImage;
-
-    imageDessin.classList.remove('dessin-enfant', 'dessin-homme', 'dessin-femme');
-    // Ajoute le nouveau dessin
-    imageDessin.classList.add(nouveauID);
-
-    // Change le titre et le nombre
-    titre.textContent = bouton.getAttribute('data-titre');
-    nombre.textContent = bouton.getAttribute('data-nombre');
-
-    // Change l'icône active en rouge
-    const icone = bouton.querySelector('img');
-    let nomActive = icone.src.split('/').pop();
-    nomActive = nomActive.replace('-gris.png', '').replace('-rouge.png', '');
-    icone.src = `img/${nomActive}-rouge.png`;
-  });
-});
 
 // ============================================================
 // Carte interactive : Reconnaissance de l'État palestinien
