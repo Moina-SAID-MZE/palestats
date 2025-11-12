@@ -781,19 +781,21 @@ hr {
   margin-top: 2px;
 }
 
+/* ——— ACTIVE ——— */
 .icon.active {
   border: 1.5px solid #c73d3d;
   background-color: #141414;
 }
 
-.icone.active p,
-.icone.active span {
+.icon.active p,
+.icon.active span {
   color: #fff;
 }
 
-.icone.active img {
+.icon.active img {
   transform: scale(1.05);
 }
+
 
 .low-bloc {
   margin-top: 30px;
