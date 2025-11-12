@@ -352,10 +352,6 @@ p, a, li {
   font-weight: 800;
   margin-bottom: 40px;
   position: relative;
-  display: inline-block;
-  background: linear-gradient(45deg, var(--texte), var(--rouge));
-  -webkit-background-clip: text;             /*dégradé*/
-  -webkit-text-fill-color: transparent;
 }
 
 .timeline-title::after {
@@ -1367,6 +1363,7 @@ hr {
   transform: scale(1.15);
   filter: brightness(1.3);
 }
+
 
 
 
