@@ -212,12 +212,46 @@ document.addEventListener('DOMContentLoaded', () => {
         fenetre.style.display = 'none';
       }
     });
+  } // <--- Cette accolade était manquante !
+
+  /* -----------------------------
+     Bouton Pastèque (Footer) - CODE RÉPARÉ
+     Affiche le pop-up d'explication.
+  ----------------------------- */
+  const pastequeBouton = document.querySelector('.footer-pasteque');
+  const popup = document.querySelector('.popup-pasteque');
+  const closeButton = document.querySelector('.popup-close');
+
+  if (pastequeBouton && popup && closeButton) {
+    // 1. Ouvrir le pop-up au clic sur la pastèque
+    pastequeBouton.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Utilisation de 'flex' pour centrer l'élément comme défini dans le CSS
+      popup.style.display = 'flex'; 
+    });
+
+    // 2. Fermer le pop-up au clic sur la croix (X)
+    closeButton.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    // 3. Fermer le pop-up au clic en dehors (sur l'arrière-plan de la fenêtre)
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+
+    // 4. Fermer le pop-up avec la touche Échap
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && popup.style.display === 'flex') {
+        popup.style.display = 'none';
+      }
+    });
   }
-});
+}); // <-- Le premier bloc DOMContentLoaded se termine ici.
 
 // chiffres qui defilent
-
-// CHIFFRES QUI DÉFILENT — RELANCE À CHAQUE SCROLL
 document.addEventListener("DOMContentLoaded", () => {
   const valeurs = document.querySelectorAll(".valeur");
 
