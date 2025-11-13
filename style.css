@@ -223,6 +223,15 @@ p, a, li {
 
 /*chiffres defilement*/
 
+#chiffres {
+  background: url("img/image-fond-chiffres.png") center/cover no-repeat;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+}
+
 .header-chiffres {
   display: flex;
   flex-direction: column;
@@ -271,9 +280,9 @@ p, a, li {
 }
 
 .texte {
-  font-size: 14px;
-  color: #ddd;
-
+  font-size: 20px;
+  color: #ebebeb;
+font-weight: 600;
   line-height: 1.3;
 }
 
