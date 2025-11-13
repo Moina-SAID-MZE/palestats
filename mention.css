@@ -133,19 +133,26 @@ a:hover {
 
 /* ============================    IMAGE BONHOMME    ============================ */
 .bloc-bonhomme {
-   position: relative;
-    border: 1px solid #1E1E1E; 
-    border-radius: 12px;
-     padding: 25px;
-      margin-bottom: 25px;
-     } 
-     
+  position: relative;
+  border: 1px solid #1E1E1E;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.texte-bonhomme {
+  flex: 1;
+}
+
 .bonhomme {
-       width: 350px; 
-       margin-left: 700px;
-       margin-bottom: -30px; 
-       margin-top: 20px;
-      }
+  width: 320px;
+  margin: 20px 0 -30px auto; /* collé à droite en desktop */
+  display: block;
+}
 
 /* ============================   BOUTON RETOUR HAUT   ============================ */
 .top-btn {
@@ -313,3 +320,153 @@ html {
   filter: brightness(1.3);
 }
 
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* ----------- TABLETTES ----------- */
+@media (max-width: 992px) {
+
+  .entete .container {
+    padding: 16px 40px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    width: 90%;
+  }
+
+  .pastèque {
+    width: 190px;
+    right: 20px;
+    top: -10px;
+  }
+
+  .page {
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .bloc-bonhomme {
+    gap: 20px;
+  }
+
+  .bonhomme {
+    width: 260px;
+    margin: 20px 0 -20px auto;
+  }
+}
+
+/* ----------- MOBILE ----------- */
+@media (max-width: 700px) {
+
+  /* Header */
+  .entete .container {
+    padding: 16px 20px;
+  }
+
+  .logo img {
+    width: 90px;
+  }
+
+  .bouton-contact {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* Hero */
+  .hero {
+    height: 150px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .pastèque {
+    width: 140px;
+    right: -10px;
+    top: -20px;
+    opacity: 0.6;
+  }
+
+  /* Page */
+  .page {
+    width: 92%;
+    margin: 30px auto;
+  }
+
+  .bloc,
+  .bloc-bonhomme {
+    padding: 18px;
+  }
+
+  .bloc h2,
+  .bloc-bonhomme h2 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  /* Bonhomme + texte */
+  .bloc-bonhomme {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bonhomme {
+    width: 60%;
+    max-width: 220px;
+    margin: 10px auto 0 auto;
+  }
+
+  /* Contacts */
+  .cartes-contacts {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .carte-contact {
+    max-width: 100%;
+  }
+
+  /* Bouton retour haut */
+  .top-btn {
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .top-btn img {
+    width: 40px;
+  }
+}
+
+/* ----------- TOUT PETITS ÉCRANS ----------- */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .pastèque {
+    width: 120px;
+    right: -15px;
+    top: -25px;
+  }
+
+  .bonhomme {
+    width: 70%;
+    max-width: 180px;
+  }
+
+  p {
+    font-size: 0.83rem;
+  }
+
+  .top-btn img {
+    width: 34px;
+  }
+}
