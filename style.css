@@ -1,12 +1,4 @@
-/* ============================    Variables de couleurs    ============================ */
-:root {
-  --fond: #070708;
-  --rouge: #8A2121;
-  --texte: #FFFFFF;
-  --gris: #BEBEBE;
-}
 
-/* ============================    Base générale    ============================ */
 html, body {
   margin: 0;
   width: 100%;
@@ -14,6 +6,10 @@ html, body {
   color: var(--texte);
   font-family: 'Manrope', sans-serif; /* Police utilisée partout */
   overflow-x: hidden;
+   --fond: #070708;
+  --rouge: #8A2121;
+  --texte: #FFFFFF;
+  --gris: #BEBEBE;
 }
 
 h1, h2, h3 {
@@ -227,31 +223,22 @@ p, a, li {
 
 /*chiffres defilement*/
 
-#chiffres {
-  background: url("img/image-fond-chiffres.png") center/cover no-repeat;
-  color: #fff;
-  font-family: 'Manrope', sans-serif;
-  padding: 120px 0;
-  text-align: center;
-  position: relative;
+.header-chiffres {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* ou center si tu veux centrer */
+  margin-left: 120px; /* l’ancien margin-left que tu mettais */
+  margin-bottom: 60px;
 }
 
 .sous-titre {
-  font-size: 13px;
-  color: #d3d3d3;
- padding-right: 0;
-text-align: center;
+  margin: 0 0 10px 0; /* enlève tes anciens margin-left */
 }
 
 .titre-section {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 70px;
-  text-align: left;
-  margin-left: 0;
-text-align: center;
-
+  margin: 0;
 }
+
 
 .grille-chiffres {
   display: grid;
@@ -338,30 +325,32 @@ text-align: center;
 /* Titre + sous-titre */
 
 .timeline-header {
-  text-align: center;
+  
   margin-bottom: 60px;
 }
 
 .timeline-subtitle {
   color: #888;
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: -25px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-left: 50px;
 }
 
 .timeline-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 40px;
   position: relative;
+  margin-left: 50px;
 }
 
 .timeline-title::after {
   content: '';
   position: absolute;
   bottom: -15px;
-  left: 50%;
+  left: 5%;
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
@@ -1370,355 +1359,152 @@ hr {
   filter: brightness(1.3);
 }
 
+
 /* ======================================================================== */
-/* ============================  RESPONIVE  ============================ */
-/* ======================================================================= */
+/* ============================  RESPONSIVE  =============================== */
+/* ======================================================================== */
 
-/* ===========================
-   RESPONSIVE – SECTION INTRO
-=========================== */
-
+/* ===============================
+   1 — SECTION INTRO
+================================= */
 @media (max-width: 992px) {
-
   .intro .container {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left; 
     gap: 25px;
     padding: 0 20px;
   }
 
-  .bloc-gauche {
-    align-items: center;
-  }
+  .bloc-gauche { align-items: flex-start; } 
+  .titre-gauche { font-size: 26px; text-align: left; }
+  .texte { font-size: 15px; max-width: 95%; margin: 10px 0; text-align: left; } 
+  .texte-bouton { flex-direction: column; gap: 12px; align-items: flex-start; } 
+  .bouton img { width: 85px; }
 
-  .titre-gauche {
-    font-size: 26px;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
-  .texte {
-    font-size: 15px;
-    max-width: 95%;
-    margin: 10px auto 20px;
-  }
-
-  .texte-bouton {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .bouton img {
-    width: 85px;
-  }
-
-  .pasteque {
-    width: 140px;
-    right: 10px;
-    top: 10%;
-    opacity: 0.4;
-  }
-
-  .image {
-    width: 100%;
-    max-width: 600px;
-    margin: 10px auto 0;
-  }
+  .image { width: 100%; max-width: 600px; margin: 10px auto; }
 }
 
-/* PETIT MOBILE */
 @media (max-width: 600px) {
   .titre-gauche { font-size: 22px; }
-  .pasteque { width: 110px; opacity: 0.3; }
   .bouton img { width: 75px; }
   .texte { font-size: 14px; }
 }
 
-/* ===========================
-   RESPONSIVE – SECTION PRÉSENTATION
-=========================== */
-
+/* ===============================
+   2 — SECTION PRÉSENTATION
+================================= */
 @media (max-width: 992px) {
-
-  /* Passe en 1 colonne */
-  .grid-2 {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .image-drapeau img {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .texte-presentation {
-    font-size: 14px;
-    padding: 20px;
-  }
-
-  .section-title {
-    text-align: center;
-  }
-
-  .colored-title {
-    text-align: center;
-    font-size: 28px;
-  }
+  .grid-2 { grid-template-columns: 1fr; gap: 30px; text-align: left; } 
+  .image-drapeau img { max-width: 80%; margin: 0 auto; }
+  .texte-presentation { font-size: 14px; padding: 20px; }
 }
 
-/* Mobile petit */
 @media (max-width: 600px) {
-
-  .image-drapeau img {
-    max-width: 100%;
-  }
-
-  .texte-presentation {
-    font-size: 13px;
-  }
-
-  .colored-title {
-    font-size: 24px;
-  }
+  .image-drapeau img { max-width: 100%; }
+  .colored-title { font-size: 24px; }
 }
 
-/* ===========================
-   RESPONSIVE – SECTION TIMELINE
-=========================== */
-
+/* ===============================
+   3 — SECTION TIMELINE
+================================= */
 @media (max-width: 992px) {
-
-  /* Titre */
-  .timeline-title {
-    font-size: 2rem;
-  }
-
-  /* Conteneur des dates */
-  .timeline-dates-container {
-    padding-bottom: 20px;
-  }
-
-  .timeline-dates-bar {
-    gap: 20px;
-    padding: 10px 20px 20px 20px;
-  }
-
-  .date-item {
-    font-size: 13px;
-    padding: 10px 12px;
-  }
-
-  .date-item::before {
-    width: 8px;
-    height: 8px;
-    bottom: -7px;
-  }
-
-  /* Carrousel */
-  .timeline-carousel-container {
-    padding: 0 20px;
-    max-width: 100%;
-  }
-
-  .nav-button {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .timeline-carousel {
-    min-height: 380px;
-  }
-
-  .timeline-card {
-    padding: 20px;
-    min-height: 360px;
-  }
-
-  .timeline-card h3 {
-    font-size: 18px;
-  }
-
-  .timeline-card p {
-    font-size: 14px;
-  }
-
-  .image-container {
-    height: 180px;
-  }
-
-  .timeline-card img {
-    max-height: 180px;
-  }
+  .timeline-title { font-size: 1.8rem; } /* Harmonisation responsive */
+  .timeline-dates-bar { gap: 20px; padding: 10px 20px; }
+  .date-item { font-size: 13px; padding: 10px 12px; }
+  .timeline-carousel-container { padding: 0 20px; }
+  .nav-button { width: 40px; height: 40px; font-size: 18px; }
+  .timeline-card { padding: 20px; }
 }
 
-/* ==== MOBILE PETIT ==== */
 @media (max-width: 600px) {
-
-  .timeline-title {
-    font-size: 1.6rem;
-  }
-
-  .timeline-dates-bar {
-    gap: 16px;
-  }
-
-  .date-item {
-    font-size: 12px;
-    padding: 8px 10px;
-  }
-
-  .image-container {
-    height: 150px;
-  }
-
-  .timeline-card img {
-    max-height: 150px;
-  }
-
-  .timeline-card {
-    padding: 18px;
-  }
+  .timeline-title { font-size: 1.6rem; }
+  .date-item { font-size: 12px; padding: 8px 10px; }
+  .timeline-card { padding: 18px; }
 }
 
-
-/* ===========================
-   RESPONSIVE – SECTION CHIFFRES
-=========================== */
-
+/* ===============================
+   4 — SECTION CHIFFRES
+================================= */
 @media (max-width: 992px) {
-
-  #chiffres {
-    padding: 70px 20px;
-  }
-
-  .sous-titre {
-    text-align: center;
-    padding-right: 0;
-  }
-
-  .titre-section {
-    text-align: center;
-    margin-left: 0;
-    font-size: 24px;
-  }
-
-  .grille-chiffres {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .bloc-chiffre {
-    flex-direction: column;
-    text-align: center;
-    padding: 18px;
-  }
-
-  .valeur {
-    font-size: 30px;
-    margin-bottom: 5px;
-  }
+  #chiffres { padding: 70px 20px; }
+  .titre-section { font-size: 24px; text-align: left; } 
+  .grille-chiffres { grid-template-columns: 1fr; gap: 25px; }
+  .bloc-chiffre { flex-direction: column; text-align: center; } 
 }
 
-/* Petit mobile */
 @media (max-width: 600px) {
-
-  .titre-section {
-    font-size: 20px;
-  }
-
-  .valeur {
-    font-size: 26px;
-  }
-
-  .texte {
-    font-size: 13px;
-  }
+  .titre-section { font-size: 20px; }
+  .valeur { font-size: 26px; }
+  .bloc-chiffre { width: 100%; padding: 20px 15px !important; }
 }
 
+#chiffres { overflow-x: hidden; }
 
-/* ===========================
-   RESPONSIVE – SECTION POUR NE PAS OUBLIER
-=========================== */
+/* ===============================
+   5 — SECTION "POUR NE PAS OUBLIER"
+================================= */
 
-@media (max-width: 992px) {
+/* Toujours horizontal, même en mobile */
+@media (max-width: 700px) {
 
   .content {
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: row !important;   /* ON RESTE HORIZONTAL */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: left !important;
   }
 
-  .text-title {
-    padding-left: 0;
-    text-align: center;
+  .dessin {
+    flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
   .dessin img {
-    max-width: 80%;
-    margin: 0 auto;
+    width: 80% !important;         /* On réduit mais on garde la même mise en page */
+    max-width: 220px !important;
+    height: auto;
+    object-fit: contain;
   }
 
   .bloc-stats {
-    width: 100%;
-    padding: 20px;
+    flex: 1.2;
+    width: auto !important;
+    max-width: 350px !important;   /* Pour ne pas casser la mise en page */
+    text-align: left;
+    padding: 15px;
   }
 
-  .bloc-haut h2 {
-    font-size: 1.6rem;
+  .bloc-haut h2 {  font-size: 1.4rem; }
+  .children { font-size: 1.8rem; }
+
+  .icons { 
+    justify-content: flex-start; 
+    gap: 12px; 
+    flex-wrap: nowrap;          /* reste sur une ligne */
   }
 
-  .children {
-    font-size: 2rem;
+  .icon { 
+    width: 75px; 
+    height: 95px; 
+    padding: 8px; 
   }
 
-  .icons {
-    gap: 15px;
-    flex-wrap: wrap;
+  .icon img { 
+    width: 38px; 
+    height: 38px; 
   }
 
-  .icon {
-    width: 90px;
-    height: 110px;
-    padding: 12px;
-  }
-
-  .icon img {
-    width: 40px;
-    height: 40px;
-  }
+  .low-bloc h3 { font-size: 1.4rem;  }
+  .low-text { font-size: 0.85rem; }
 }
 
-/* Petit mobile */
-@media (max-width: 600px) {
-
-  .dessin img {
-    max-width: 100%;
-  }
-
-  .bloc-haut h2 {
-    font-size: 1.4rem;
-  }
-
-  .children {
-    font-size: 1.8rem;
-  }
-
-  .low-bloc h3 {
-    font-size: 1.6rem;
-  }
-
-  .low-text {
-    font-size: 0.9rem;
-  }
-}
-
-
-/* Desktop – taille uniforme des dessins */
+/* Desktop */
 @media (min-width: 992px) {
   .dessin img {
-    height: 550px;      /* même hauteur pour les 3 images */
-    width: auto;        /* respecte les proportions */
+    height: 550px;
+    width: auto;
     object-fit: contain;
   }
 
@@ -1727,172 +1513,102 @@ hr {
     align-items: flex-start;
   }
 }
-/* ÉCRAN MOYEN — stabiliser la taille des dessins */
-@media (min-width: 600px) and (max-width: 991px) {
-  .dessin img {
-    max-height: 450px;   /* Taille idéale pour écrans moyens */
-    max-width: 70%;
-    height: auto;
-    width: auto;
-    margin: 0 auto;
-    display: block;
-    object-fit: contain;
-  }
 
-  .content {
-    flex-direction: column; /* met l’image au-dessus pour éviter écrasement */
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .bloc-stats {
-    width: 100%;
-  }
-}
-
-/* ===========================
-   RESPONSIVE – SECTION CARTE RECONNAISSANCE
-=========================== */
-
-@media (max-width: 992px) {
-
-  #carte-reconnaissance {
-    padding: 70px 0;
-  }
-
-  #carte-reconnaissance .conteneur {
-    padding: 0 20px;
-  }
-
-  .entete-carte {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .bloc-titre-carte h2 {
-    font-size: 26px;
-  }
-
-  .bloc-titre-carte .sous-texte {
-    font-size: 14px;
-  }
-
-  .bloc-bouton-carte {
-    align-self: stretch;
-    justify-content: space-between;
-  }
-
-  .bouton-texte-carte {
-    padding: 10px 16px;
-  }
-
-  .texte-bouton-carte {
-    font-size: 14px;
-  }
-
-  #mapdiv {
-    height: 420px;
-  }
-
-  .legende-carte {
-    gap: 10px;
-    font-size: 13px;
-  }
-}
-
-/* MOBILE PETIT – CARTE */
+/* Fix taille section chiffres sur mobile (inchangé) */
 @media (max-width: 600px) {
 
-  .entete-carte {
-    align-items: center;
-    text-align: center;
+  #chiffres {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .bloc-titre-carte h2 {
-    font-size: 22px;
+  .grille-chiffres {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
   }
 
-  .bloc-titre-carte .sous-texte {
-    font-size: 13px;
-  }
-
-  .bloc-bouton-carte {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .bouton-texte-carte {
-    padding: 8px 14px;
-  }
-
-  #mapdiv {
-    height: 340px;
-  }
-
-  .legende-carte {
-    flex-direction: column;
-    align-items: flex-start;
+  .bloc-chiffre {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px 12px !important;
+    box-sizing: border-box;
   }
 }
 
 /* ===========================
-   RESPONSIVE – FOOTER
+   FOOTER — FIX ULTIME MOBILE
 =========================== */
 
-@media (max-width: 992px) {
+@media (max-width: 600px) {
 
   .footer {
-    padding: 50px 30px 30px;
-  }
-
-  .footer-title {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-left: 0;
-  }
-
-  .footer-subtitle {
-    text-align: center;
-    margin-left: 0;
+    padding: 40px 0 30px;
+    position: relative;
   }
 
   .footer-content {
-    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    overflow: visible !important;
   }
 
-  .footer-pasteque {
-    width: 350px;
-    top: -180px;
-    right: -200px;
+  /* Sous-titre */
+  .footer-subtitle {
+    text-align: left;
+    font-size: 0.85rem;
+    margin: 0 0 22px 0;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-}
-
-/* MOBILE PETIT */
-@media (max-width: 600px) {
-
+  /* Titre */
   .footer-title {
     font-size: 1.9rem;
+    line-height: 1.28;
+    text-align: left;
+    margin: 0 0 35px 0;
+    position: relative;
+    z-index: 3;
   }
 
+  .footer-smiley {
+    width: 34px;
+    height: 34px;
+    vertical-align: -5px;
+  }
+
+  /* Pastèque collée au bord droit */
   .footer-pasteque {
-    width: 240px;
-    top: -120px;
-    right: -120px;
+    position: absolute;
+    right: -10px;
+    top: -12px;
+    width: 185px;
+    z-index: 2;
+    pointer-events: none;
+    
   }
 
+  /* Texte "pourquoi une pastèque ??" */
   .zone-indic-footer {
-    right: 0;
-    top: -20px;
-    transform: scale(0.7) rotate(-8deg);
+    position: absolute;
+    right: -6px;
+    top: 70px;
+    transform: scale(0.6);
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  /* Bas du footer */
+  .footer-bottom {
+    border-top: 1px solid #1E1E1E;
+    margin-top: 55px;
+    padding: 18px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+    font-size: 0.9rem;
   }
 }
-
 
