@@ -1123,23 +1123,24 @@ hr {
   z-index: 10;
 }
 
-/* Bas du footer */
+
 .footer-bottom {
   border-top: 1px solid #1E1E1E;
   margin-top: 60px;
   padding-top: 20px;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   font-size: 0.9rem;
   color: var(--gris);
 }
 
-.footer-lien {
-  color: var(--gris);
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
+
+.footer-left {
+  display: flex;
+  gap: 25px; 
+  align-items: center;
 }
 
 .footer-lien::after {
@@ -1695,4 +1696,5 @@ hr {
     font-size: 18px;
   }
 }
+
 
