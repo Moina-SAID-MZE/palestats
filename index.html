@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Palestats — Dataviz</title>
-
+ <link rel="icon" href="img/favicon.png"> 
   <!-- Feuille de style -->
   <link rel="stylesheet" href="style.css" />
   <!-- Police Manrope -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet">
-      <!-- Police "Cliquez ici !" dans le foooter -->
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+      <!-- Police shadows into light dans le foooter -->
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -111,6 +111,45 @@
         <!-- La timeline est générée en JavaScript -->
       </div>
     </section>
+
+
+     <!-- =======================GRAPHIQUE ======================-->
+<section id="graphique-amcharts"> 
+    <div class="container"> 
+  
+      <div class="graphique-header">
+        
+        <div>
+          <p class="sous-titre-graphique">
+            DEUX SOURCES, DEUX RÉALITÉS?
+          </p>
+  
+          <h2 class="titre-graphique" id="graph-title">
+              NOMBRE DE MORTS ANNUELS (2008 - 2022)
+          </h2>
+        </div>
+  
+        <div class="bloc-bouton-graphique">
+            <button id="toggle-chart-btn" class="bouton-toggle-interne">
+                <div class="bouton-texte-carte">
+                  <img src="img/icon-graph.png" alt="Icône graphique" class="icone-globe">
+                  <span class="texte-bouton-carte" id="toggle-text">Changer de graphique : Blessés</span>
+                </div>
+                <div class="bouton-fleche-carte">
+                  <img src="img/fleche-btn-carte.png" alt="Flèche" class="icone-fleche">
+                </div>
+            </button>
+        </div>
+        
+      </div> <div class="instruction-legende">
+          Cliquez sur la légende pour masquer ou afficher le tracé.
+      </div>
+      
+      <div id="amcharts-container"></div> 
+  
+    </div>
+  </section>
+  
 
      <!-- ================= SECTION CHIFFRE ================= -->
 
@@ -366,6 +405,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
