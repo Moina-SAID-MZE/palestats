@@ -371,7 +371,6 @@ font-weight: 600;
 
 .timeline-dates-container {
   position: relative;
-  margin-bottom: 50px;
   max-width: 100%;
   padding-top: 10px;
   padding-bottom: 35px;
@@ -1749,6 +1748,7 @@ hr {
     font-size: 18px;
   }
 }
+
 
 
 
