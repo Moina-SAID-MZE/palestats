@@ -696,22 +696,8 @@ document.addEventListener('DOMContentLoaded', () => {
         loadChartData(currentChartType);
     }
 });
-document.addEventListener('DOMContentLoaded', () => {
-    // ... (votre code initial) ...
 
-    const toggleBtn = document.getElementById('toggle-chart-btn');
 
-    // 💡 Déplacer l'appel initial ici :
-    loadChartData(currentChartType); // Charge le graphique même si le bouton est introuvable
-
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentChartType = (currentChartType === 'morts') ? 'blesses' : 'morts';
-            loadChartData(currentChartType);
-        });
-    }
-});
 
 
 
