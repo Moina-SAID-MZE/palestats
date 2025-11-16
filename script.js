@@ -185,6 +185,203 @@ document.addEventListener('DOMContentLoaded', () => {
             Erreur de chargement des données.<br>Vérifie le fichier <b>data.json</b>.
           </p>`;
     });
+// --- GRAPHIQUE AMCHARTS  ---
+
+let root = null;
+let currentChartType = 'morts'; 
+
+const DATA_PATHS = {
+  morts: {
+      path: "data/mort-graphique.json", 
+      title: "NOMBRE DE MORTS ANNUELS (2008 - 2022)",
+      source1: "SOURCE 1",
+      source2: "SOURCE 2",
+      buttonText: "Changer de graphique : Blessés"
+  },
+  blesses: {
+      path: "data/blesses-graphique.json", 
+      title: "NOMBRE DE BLESSÉS ANNUELS (2008 - 2022)",
+      //
+      source1: "SOURCE 1", 
+      source2: "SOURCE 2",
+      buttonText: "Changer de graphique : Morts"
+  }
+};
+
+
+function createChart(data, config) {
+    if (root) {
+        root.dispose(); 
+    }
+    
+    // Racine
+    root = am5.Root.new("amcharts-container");
+    root.dom.style.height = "500px";
+    root.dom.style.width = "100%";
+
+    // Configuration des couleurs et du thème
+    root.interfaceColors.set("text", am5.color(0xFFFFFF));
+    root.setThemes([am5themes_Animated.new(root)]);
+    
+    chartColors = am5.ColorSet.new(root, {
+      colors: [
+        am5.color(0xDD4F01), // Couleur 1
+        am5.color(0x007857)  // Couleur 2
+      ]
+    });
+
+    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+      panX: true, panY: true, wheelX: "panX", wheelY: "zoomX", pinchZoomX: true
+    }));
+    chart.set("colors", chartColors);
+ 
+
+    // Curseur
+    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+    cursor.lineY.set("visible", false);
+// Axe X
+var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+  maxDeviation: 0.3,
+  baseInterval: { timeUnit: "year", count: 1 },
+  renderer: am5xy.AxisRendererX.new(root, { 
+      strokeOpacity: 1, 
+      stroke: am5.color(0xFFFFFF), 
+      strokeWidth: 2 
+  }),
+  tooltip: am5.Tooltip.new(root, {})
+}));
+
+xAxis.get("renderer").labels.template.set("fill", am5.color(0xFFFFFF));
+
+// GRILLE X
+xAxis.get("renderer").grid.template.setAll({
+    stroke: am5.color(0xFFFFFF),
+    strokeOpacity: 0.2       
+});
+
+
+// Axe Y
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+  maxDeviation: 0.3,
+  renderer: am5xy.AxisRendererY.new(root, {
+      strokeOpacity: 1, 
+      stroke: am5.color(0xFFFFFF), 
+      strokeWidth: 2 
+  })
+}));
+
+yAxis.get("renderer").labels.template.set("fill", am5.color(0xFFFFFF));
+
+//  GRILLE Y
+yAxis.get("renderer").grid.template.setAll({
+    stroke: am5.color(0xFFFFFF),
+    strokeOpacity: 0.2      
+});
+
+
+    // --- SÉRIE 1 (Couleur 1) ---
+    var series1 = chart.series.push(am5xy.LineSeries.new(root, {
+      name: config.source1,
+      xAxis: xAxis,
+      yAxis: yAxis,
+      valueYField: "value1",
+      valueXField: "date",
+      tooltip: am5.Tooltip.new(root, {
+        labelText: "[bold]{name}:[/] {valueY}"
+      })
+    }));
+    series1.set("stroke", am5.color(0xDD4F01));
+    series1.strokes.template.setAll({ strokeWidth: 2 });
+    series1.data.setAll(data);
+    series1.appear(1000);
+
+    // --- SÉRIE 2 (Couleur 2) ---
+    var series2 = chart.series.push(am5xy.LineSeries.new(root, {
+      name: config.source2,
+      xAxis: xAxis,
+      yAxis: yAxis,
+      valueYField: "value2",
+      valueXField: "date",
+      tooltip: am5.Tooltip.new(root, {
+        labelText: "[bold]{name}:[/] {valueY}"
+      })
+    }));
+    series2.set("stroke", am5.color(0x007857));
+    series2.strokes.template.setAll({ strokeDasharray: [2, 2], strokeWidth: 2 });
+    series2.data.setAll(data);
+    series2.appear(1000);
+
+
+    // --- LÉGENDE ---
+    var legend = chart.children.push(am5.Legend.new(root, {
+        centerX: am5.p50, x: am5.p50, marginTop: 20, useDefaultMarker: true
+    }));
+    legend.labels.template.setAll({
+        fontSize: 14, fontWeight: "800", fill: am5.color(0xFFFFFF), cursor: "pointer"
+    });
+    legend.labels.template.states.create("disabled", { opacity: 0.5, fill: am5.color(0xFFFFFF) });
+    legend.data.setAll(chart.series.values);
+    
+    chart.appear(1000, 100);
+}
+
+
+function loadChartData(type) {
+    const config = DATA_PATHS[type];
+    const titleElement = document.getElementById('graph-title');
+    const toggleTextElement = document.getElementById('toggle-text');
+    
+    // 1. Mettre à jour le titre
+    if (titleElement) {
+        titleElement.textContent = config.title.toUpperCase();
+    }
+    
+    // 2. Mettre à jour le texte du bouton
+    if (toggleTextElement) {
+        toggleTextElement.textContent = config.buttonText;
+    }
+
+    // 3. Charger et dessiner le graphique
+    fetch(config.path)
+        .then(response => response.json())
+        .then(json_data_raw => {
+            const json_data = json_data_raw.map(item => ({
+                date: new Date(item["Année"], 0, 1).getTime(),
+                value1: item[config.source1],
+                value2: item[config.source2]
+            }));
+            
+            am5.ready(() => createChart(json_data, config));
+        })
+}
+
+
+// --- Écouteur d'événement pour le Bouton de Bascule ---
+document.addEventListener('DOMContentLoaded', () => {
+
+
+    const toggleBtn = document.getElementById('toggle-chart-btn');
+
+    if (toggleBtn) {
+        // Charge le graphique "morts" au démarrage
+        loadChartData(currentChartType);
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Basculer l'état
+            currentChartType = (currentChartType === 'morts') ? 'blesses' : 'morts';
+            
+            // Recharger le graphique
+            loadChartData(currentChartType);
+        });
+    } else {
+        // Charger le graphique "morts" par défaut si le bouton n'est pas trouvé
+        loadChartData(currentChartType);
+    }
+});
+
+
+
   
   /* -----------------------------
      Fenêtre de contacts
@@ -212,10 +409,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fenetre.style.display = 'none';
       }
     });
-  } // <--- Cette accolade était manquante !
+  } 
 
   /* -----------------------------
-     Bouton Pastèque (Footer) - CODE RÉPARÉ
+     Bouton Pastèque (Footer) - 
      Affiche le pop-up d'explication.
   ----------------------------- */
   const pastequeBouton = document.querySelector('.footer-pasteque');
@@ -249,7 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-}); // <-- Le premier bloc DOMContentLoaded se termine ici.
+}); 
 
 // chiffres qui defilent
 document.addEventListener("DOMContentLoaded", () => {
@@ -288,7 +485,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, intervalTime);
   };
 
-  // Observez l'entrée dans #chiffres
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) startAnimation();
@@ -368,11 +564,11 @@ am5.ready(function() {
   }));
   
   // Zoom fluide et contrôlé
-  chart.set("zoomStep", 1.5);          // zoom progressif (1.5 = bon équilibre)
-  chart.set("wheelSensitivity", 0.5);  // sensibilité molette (0.5 = fluide)
-  chart.set("animationDuration", 300); // transitions douces mais rapides
-  chart.set("minZoomLevel", 1);        // zoom minimum (vue monde)
-  chart.set("maxZoomLevel", 16);       // zoom maximum (détails pays)
+  chart.set("zoomStep", 1.5);          
+  chart.set("wheelSensitivity", 0.5); 
+  chart.set("animationDuration", 300); 
+  chart.set("minZoomLevel", 1);        
+  chart.set("maxZoomLevel", 16);      
   
   // Activer l'interactivité
   chart.chartContainer.set("wheelable", true);
@@ -502,6 +698,7 @@ am5.ready(function() {
   }));
   
   }); // fin am5.ready
+
 
 
 
