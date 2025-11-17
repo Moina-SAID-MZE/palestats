@@ -1033,17 +1033,15 @@ hr {
 
 
   /* ----------- BOUTON MAQUETTE (en haut à droite du titre) ----------- */
-  .bloc-bouton-carte {
+.bloc-bouton-carte {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #0C0C0D;
-    border: 1.5px solid #2A2A2C;
-    border-radius: 80px;
-    padding: 8px 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    transition: all 0.25s ease;
-  }
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
   
   /* Partie gauche (texte + icône globe) */
   .bouton-texte-carte {
@@ -1789,6 +1787,7 @@ hr {
     font-size: 18px;
   }
 }
+
 
 
 
