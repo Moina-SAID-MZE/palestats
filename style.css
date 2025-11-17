@@ -658,6 +658,56 @@ min-height: 180px;
     padding-bottom: 80px; 
     border-bottom: 1px solid #2A2A2C
   }
+/* ==== BOUTON DU GRAPHIQUE (indépendant du bouton CARTE) ==== */
+
+.btn-graphique-texte {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #1A1A1C;
+    border: 1.5px solid #2A2A2C;
+    border-radius: 60px;
+    padding: 12px 22px;
+    transition: all 0.25s ease;
+}
+
+.btn-graphique-texte:hover {
+    background: #222224;
+    border-color: #3B3B3E;
+}
+
+#icone-graphique {
+    width: 28px;
+    height: 28px;
+}
+
+#toggle-text-graph {
+    color: #FFFFFF;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/* Flèche du bouton graphique */
+.btn-graphique-fleche {
+    background: #1A1A1C;
+    border: 1.5px solid #2A2A2C;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-graphique-fleche:hover {
+    background: #222224;
+    border-color: #3B3B3E;
+    transform: scale(1.05);
+}
 
 
 
@@ -1739,6 +1789,7 @@ hr {
     font-size: 18px;
   }
 }
+
 
 
 
