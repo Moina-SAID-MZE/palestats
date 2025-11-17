@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
   /* -----------------------------
      Animation des prénoms défilants
   ----------------------------- */
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-/* === Timeline === */
+  /* === Timeline === */
   fetch("data.json")
     .then(r => {
       if (!r.ok) throw new Error(`Erreur HTTP: ${r.status}`);
@@ -129,8 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
         carousel.appendChild(card);
       });
 
-
-
       const updateTimeline = () => {
         // Active la bonne date
         document.querySelectorAll('.date-item').forEach((item, i) => {
@@ -157,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTimeline();
       };
 
-  
       prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
       nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
 
@@ -185,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Erreur de chargement des données.<br>Vérifie le fichier <b>data.json</b>.
           </p>`;
     });
-  
+
   /* -----------------------------
      Fenêtre de contacts
   ----------------------------- */
@@ -426,8 +424,11 @@ am5.ready(function() {
   // Bouton : vue carte / vue globe
   // ==============================
   const boutonFleche = document.getElementById("mode-globe");
-  const texteBouton  = document.querySelector(".texte-bouton-carte");
-  const iconeGlobe   = document.querySelector(".icone-globe");
+
+
+  const texteBouton  = document.getElementById("texte-bouton-carte");
+  const iconeGlobe   = document.getElementById("icone-globe-carte");
+
   let estGlobe = false;
   
   if (boutonFleche && texteBouton && iconeGlobe) {
@@ -500,7 +501,7 @@ am5.ready(function() {
       dy: -5
   }));
   
-  }); // fin am5.ready
+}); // fin am5.ready
 
 // ---  ============================= GRAPHIQUE AMCHARTS  ============================= ---
 
@@ -518,7 +519,6 @@ const DATA_PATHS = {
   blesses: {
       path: "data/blesses-graphique.json", 
       title: "NOMBRE DE BLESSÉS ANNUELS (2008 - 2022)",
-      //
       source1: "SOURCE 1", 
       source2: "SOURCE 2",
       buttonText: "Changer de graphique : Morts"
@@ -556,44 +556,45 @@ function createChart(data, config) {
     // Curseur
     var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
     cursor.lineY.set("visible", false);
-// Axe X
-var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-  maxDeviation: 0.3,
-  baseInterval: { timeUnit: "year", count: 1 },
-  renderer: am5xy.AxisRendererX.new(root, { 
-      strokeOpacity: 1, 
-      stroke: am5.color(0xFFFFFF), 
-      strokeWidth: 2 
-  }),
-  tooltip: am5.Tooltip.new(root, {})
-}));
 
-xAxis.get("renderer").labels.template.set("fill", am5.color(0xFFFFFF));
+    // Axe X
+    var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+      maxDeviation: 0.3,
+      baseInterval: { timeUnit: "year", count: 1 },
+      renderer: am5xy.AxisRendererX.new(root, { 
+          strokeOpacity: 1, 
+          stroke: am5.color(0xFFFFFF), 
+          strokeWidth: 2 
+      }),
+      tooltip: am5.Tooltip.new(root, {})
+    }));
 
-// GRILLE X
-xAxis.get("renderer").grid.template.setAll({
-    stroke: am5.color(0xFFFFFF),
-    strokeOpacity: 0.2       
-});
+    xAxis.get("renderer").labels.template.set("fill", am5.color(0xFFFFFF));
+
+    // GRILLE X
+    xAxis.get("renderer").grid.template.setAll({
+        stroke: am5.color(0xFFFFFF),
+        strokeOpacity: 0.2       
+    });
 
 
-// Axe Y
-var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-  maxDeviation: 0.3,
-  renderer: am5xy.AxisRendererY.new(root, {
-      strokeOpacity: 1, 
-      stroke: am5.color(0xFFFFFF), 
-      strokeWidth: 2 
-  })
-}));
+    // Axe Y
+    var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+      maxDeviation: 0.3,
+      renderer: am5xy.AxisRendererY.new(root, {
+          strokeOpacity: 1, 
+          stroke: am5.color(0xFFFFFF), 
+          strokeWidth: 2 
+      })
+    }));
 
-yAxis.get("renderer").labels.template.set("fill", am5.color(0xFFFFFF));
+    yAxis.get("renderer").labels.template.set("fill", am5.color(0xFFFFFF));
 
-//  GRILLE Y
-yAxis.get("renderer").grid.template.setAll({
-    stroke: am5.color(0xFFFFFF),
-    strokeOpacity: 0.2      
-});
+    //  GRILLE Y
+    yAxis.get("renderer").grid.template.setAll({
+        stroke: am5.color(0xFFFFFF),
+        strokeOpacity: 0.2      
+    });
 
 
     // --- SÉRIE 1 (Couleur 1) ---
@@ -646,7 +647,9 @@ yAxis.get("renderer").grid.template.setAll({
 function loadChartData(type) {
     const config = DATA_PATHS[type];
     const titleElement = document.getElementById('graph-title');
-    const toggleTextElement = document.getElementById('toggle-text');
+
+    // ⬇⬇⬇ ici on pointe vers le texte du BOUTON DU GRAPHIQUE uniquement
+    const toggleTextElement = document.getElementById('toggle-text-graph');
     
     // 1. Mettre à jour le titre
     if (titleElement) {
@@ -669,13 +672,12 @@ function loadChartData(type) {
             }));
             
             am5.ready(() => createChart(json_data, config));
-        })
+        });
 }
 
 
 // --- Écouteur d'événement pour le Bouton de Bascule ---
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (votre code initial DOMContentLoaded) ...
 
     const toggleBtn = document.getElementById('toggle-chart-btn');
 
@@ -696,16 +698,3 @@ document.addEventListener('DOMContentLoaded', () => {
         loadChartData(currentChartType);
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
