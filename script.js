@@ -1,15 +1,14 @@
-// Quand la page est prête
 document.addEventListener('DOMContentLoaded', () => {
 
   /* -----------------------------
-     Défilement vers la section suivante
+     Défilement vers la section suivante 
   ----------------------------- */
-  const bouton = document.querySelector('.bouton');
+  const boutonScroll = document.querySelector('.bouton'); 
 
-  if (bouton) {
-    bouton.addEventListener('click', (e) => {
+  if (boutonScroll) {
+    boutonScroll.addEventListener('click', (e) => {
       e.preventDefault();
-      const cible = document.querySelector(bouton.getAttribute('href'));
+      const cible = document.querySelector(boutonScroll.getAttribute('href')); 
       if (cible) {
         // Fait défiler la page en douceur
         cible.scrollIntoView({ behavior: 'smooth' });
@@ -18,7 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------
-     Animation des prénoms défilants
+     Animation des prénoms défilants 
+     NOTE: Le code d'implémentation pour la lecture du CSV, la duplication du texte
+     pour l'effet de boucle, et la fonction d'animation `requestAnimationFrame` 
+     a été optimisé et structuré à l'aide de l'intelligence artificielle Claude.ai
   ----------------------------- */
   const sectionPrenoms = document.getElementById('liste-prenoms');
   const zoneTexte = document.getElementById('prenoms-defilant');
@@ -26,20 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sectionPrenoms && zoneTexte) {
     // On récupère le fichier CSV
     fetch('data/noms.csv')
-      .then(reponse => reponse.text())
+      .then(reponse => {
+        if (!reponse.ok) throw new Error('Erreur de chargement du CSV');
+        return reponse.text();
+      })
       .then(texte => {
-        // On sépare les lignes et on retire les vides
-        const lignes = texte.split('\n').filter(l => l.trim() !== '');
+        // Séparer les lignes et filtrer les vides. Suppression de l'en-tête (si présent).
+        const lignes = texte.split('\n')
+          .map(l => l.trim())
+          .filter(l => l !== '');
 
-        // Si la première ligne est un titre, on l’enlève
-        if (lignes[0].toLowerCase() === 'en_name') {
+        // Retirer l'en-tête s'il correspond au titre
+        if (lignes[0] && lignes[0].toLowerCase() === 'en_name') {
           lignes.shift();
         }
 
-        // On met les prénoms les uns à la suite
-        const texteFinal = lignes.join(' – ');
-        // On double le texte pour que la boucle soit fluide
-        zoneTexte.textContent = texteFinal + ' – ' + texteFinal;
+        // Concaténer les prénoms pour le défilement fluide.
+        const texteDeBase = lignes.join(' – ');
+        zoneTexte.textContent = texteDeBase + ' – ' + texteDeBase; // Doubler pour la boucle
 
         let x = 0;
         const vitesse = 1.5;
@@ -47,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fonction qui fait défiler le texte
         function defile() {
           x -= vitesse;
+          // Retour au début quand on dépasse la moitié de la largeur
           if (x <= -zoneTexte.scrollWidth / 2) {
             x = 0;
           }
@@ -57,10 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // On lance l’animation
         defile();
       })
-      .catch(() => {
+      .catch((erreur) => {
+        console.error("Erreur chargement prénoms :", erreur);
         zoneTexte.textContent = 'Noms indisponibles.';
       });
   }
+
 
   /* -----------------------------
      TIMELINE
@@ -354,6 +363,17 @@ boutons.forEach((bouton) => {
 
 am5.ready(function() {
 
+  /* * NOTE IMPORTANTE:
+   * L'infrastructure de base pour la création de la carte interactive a été réalisée
+   * en utilisant le code de démarrage (boilerplate) fourni par la librairie amCharts 5.
+   * * La personnalisation (changement de projection 2D/3D, palette de couleurs, 
+   * intégration et normalisation des données JSON, et développement de la 
+   * fonctionnalité de légende cliquable/filtrable) a été menée avec l'aide 
+   * de la documentation amCharts, d'articles de tutoriels spécifiques, et d'une 
+   * assistance par intelligence artificielle pour l'optimisation des fonctions 
+   * d'interaction (bascule du mode globe, gestion du filtre de la légende).
+  */
+
   // --- Création du root ---
   var root = am5.Root.new("mapdiv");
   root.setThemes([am5themes_Dark.new(root)]);
@@ -365,18 +385,20 @@ am5.ready(function() {
   // --- Création de la carte (vue 2D par défaut) ---
   var chart = root.container.children.push(am5map.MapChart.new(root, {
       projection: projection2D,
-      panX: "translateX",    // déplacement horizontal pour carte 2D
-      panY: "translateY",    // déplacement vertical pour carte 2D
-      wheelY: "zoom",        // zoom à la molette
-      pinchZoom: true        // zoom tactile
+      panX: "translateX",    
+      panY: "translateY",    
+      wheelY: "zoom",        
+      pinchZoom: true        
   }));
   
   // Zoom fluide et contrôlé
-  chart.set("zoomStep", 1.5);          
-  chart.set("wheelSensitivity", 0.5); 
-  chart.set("animationDuration", 300); 
-  chart.set("minZoomLevel", 1);        
-  chart.set("maxZoomLevel", 16);      
+  chart.setAll({
+      zoomStep: 1.5,          
+      wheelSensitivity: 0.5, 
+      animationDuration: 300, 
+      minZoomLevel: 1,        
+      maxZoomLevel: 16       
+  });
   
   // Activer l'interactivité
   chart.chartContainer.set("wheelable", true);
@@ -384,38 +406,44 @@ am5.ready(function() {
   // --- Série des pays ---
   var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
       geoJSON: am5geodata_worldLow,
-      exclude: ["AQ"] // pas d'Antarctique
+      exclude: ["AQ"], // pas d'Antarctique
+      // Paramètres par défaut des polygones pour un rendu uniforme
+      mapPolygons: am5map.MapPolygon.new(root, {
+          stroke: am5.color(0x333333),
+          strokeWidth: 0.5,
+          fill: am5.color(0x555555), // Couleur par défaut si non définie par JSON
+          tooltipText: "{name}\nStatut : {status}"
+      })
   }));
+
   
   // --- Couleurs selon le statut ---
   var colorByStatus = {
-      "1988": am5.color(0xa2d39b),                 // vert clair
-      "1989–2023": am5.color(0x2c9c4b),           // vert moyen
-      "2024": am5.color(0x46c16a),                // vert vif
-      "2025": am5.color(0x004d22),                // vert foncé
-      "Ne reconnaît pas l'État palestinien": am5.color(0xe05a5a) // rouge
+      "1988": am5.color(0xa2d39b),                 
+      "1989–2023": am5.color(0x2c9c4b),           
+      "2024": am5.color(0x46c16a),                
+      "2025": am5.color(0x004d22),                
+      "Ne reconnaît pas": am5.color(0xe05a5a)     
   };
   
-  // --- Chargement du JSON ---
+  // --- Chargement du JSON (Intégration et normalisation) ---
   fetch("data/reconnaissance-palestine.json")
       .then(response => response.json())
       .then(data => {
-          polygonSeries.data.setAll(data);
+          // Normalisation du statut pour correspondre à la palette de couleurs et la légende HTML
+          const processedData = data.map(item => ({
+              ...item,
+              status: item.status === "Ne reconnaît pas l'État palestinien" ? "Ne reconnaît pas" : item.status 
+          }));
+
+          polygonSeries.data.setAll(processedData);
   
+          // Application des couleurs après le chargement des données
           polygonSeries.events.on("datavalidated", function() {
               polygonSeries.mapPolygons.each(function(polygon) {
-                  var info = polygon.dataItem && polygon.dataItem.dataContext;
-                  if (info && info.status) {
-                      var statut = info.status;
-  
-                      // Uniformiser "Ne reconnaît pas"
-                      if (statut === "Ne reconnaît pas") {
-                          statut = "Ne reconnaît pas l'État palestinien";
-                      }
-  
-                      var couleur = colorByStatus[statut] || am5.color(0x555555);
-                      polygon.set("fill", couleur);
-                  }
+                  const statut = polygon.dataItem?.dataContext?.status;
+                  const couleur = colorByStatus[statut] || am5.color(0x555555); 
+                  polygon.set("fill", couleur);
               });
           });
       })
@@ -431,8 +459,6 @@ am5.ready(function() {
   // Bouton : vue carte / vue globe
   // ==============================
   const boutonFleche = document.getElementById("mode-globe");
-
-
   const texteBouton  = document.getElementById("texte-bouton-carte");
   const iconeGlobe   = document.getElementById("icone-globe-carte");
 
@@ -444,27 +470,23 @@ am5.ready(function() {
   
           // Changer la projection ET les contrôles
           if (estGlobe) {
-              chart.set("projection", projection3D);
-              chart.set("panX", "rotateX");  // rotation pour globe
-              chart.set("panY", "rotateY");
+              chart.setAll({
+                  projection: projection3D,
+                  panX: "rotateX",  // rotation pour globe
+                  panY: "rotateY"
+              });
           } else {
-              chart.set("projection", projection2D);
-              chart.set("panX", "translateX");  // déplacement pour carte
-              chart.set("panY", "translateY");
+              chart.setAll({
+                  projection: projection2D,
+                  panX: "translateX",  // déplacement pour carte
+                  panY: "translateY"
+              });
           }
   
-          // Changer le texte
-          texteBouton.textContent = estGlobe
-              ? 'Mode carte'
-              : 'Mode globe';
-  
-          // Changer l'icône
-          iconeGlobe.src = estGlobe
-              ? "img/icon-carte.png"
-              : "img/icon-globe.png";
+          // Changer le texte et l'icône
+          texteBouton.textContent = estGlobe ? 'Mode carte' : 'Mode globe';
+          iconeGlobe.src = estGlobe ? "img/icon-carte.png" : "img/icon-globe.png";
       });
-  } else {
-      console.log("Bouton globe : éléments HTML introuvables");
   }
   
   // ==============================
@@ -474,15 +496,19 @@ am5.ready(function() {
   let statutsMasques = new Set();
   
   function mettreAJourCarte() {
+      // Parcours tous les polygones pour appliquer l'opacité (masque / révèle)
       polygonSeries.mapPolygons.each((polygon) => {
-          const statut = polygon.dataItem?.dataContext?.status;
+          let statut = polygon.dataItem?.dataContext?.status;
+          statut = statut === "Ne reconnaît pas l'État palestinien" ? "Ne reconnaît pas" : statut;
+
+          // Applique l'opacité : 0.15 si masqué, 1 sinon
           polygon.set("fillOpacity", statutsMasques.has(statut) ? 0.15 : 1);
       });
   }
   
   itemsLegende.forEach((item) => {
       item.addEventListener("click", () => {
-          const statut = item.textContent.trim();
+          const statut = item.getAttribute("data-statut");
   
           if (statutsMasques.has(statut)) {
               statutsMasques.delete(statut);
@@ -496,7 +522,7 @@ am5.ready(function() {
       });
   });
   
-  // --- Crédit amCharts ---
+  // --- Crédit amCharts --- On est obligé de laisser le crédit "© amCharts" car on n'a pas acheté de licence commerciale. Pour un projet étudiant (usage non commercial), le respect des conditions de licence impose le maintien de cet affichage.
   chart.chartContainer.children.push(am5.Label.new(root, {
       text: "© amCharts",
       fontSize: 12,
@@ -709,5 +735,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loadChartData(currentChartType);
     }
 });
+
 
 
