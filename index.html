@@ -128,18 +128,22 @@
               NOMBRE DE MORTS ANNUELS (2008 - 2022)
           </h2>
         </div>
-  
-        <div class="bloc-bouton-graphique">
-            <button id="toggle-chart-btn" class="bouton-toggle-interne">
-                <div class="bouton-texte-carte">
-                  <img src="img/icon-graph.png" alt="Icône graphique" class="icone-globe">
-                  <span class="texte-bouton-carte" id="toggle-text">Changer de graphique : Blessés</span>
-                </div>
-                <div class="bouton-fleche-carte">
-                  <img src="img/fleche-btn-carte.png" alt="Flèche" class="icone-fleche">
-                </div>
-            </button>
-        </div>
+
+
+<button id="toggle-chart-btn" class="bouton-toggle-interne">
+
+    <div class="btn-graphique-texte">
+      <img src="img/icon-graph.png" alt="Icône graphique" id="icone-graphique">
+      <span id="toggle-text-graph">Changer de graphique : Blessés</span>
+    </div>
+
+    <div class="btn-graphique-fleche">
+      <img src="img/fleche-btn-carte.png" alt="Flèche" class="icone-fleche">
+    </div>
+
+</button>
+
+
         
       </div> <div class="instruction-legende">
           Cliquez sur la légende pour masquer ou afficher le tracé.
@@ -276,18 +280,24 @@
         </div>
       </div>
 
-      <button id="mode-globe" class="bloc-bouton-carte">
-  
+<div class="bloc-bouton-carte">
   <div class="bouton-texte-carte">
-    <img src="img/icon-globe.png" alt="Icône globe" class="icone-globe">
-    <span class="texte-bouton-carte">Mode globe</span>
+    <img src="img/icon-globe.png"
+         alt="Icône globe"
+         class="icone-globe"
+         id="icone-globe-carte">
+
+    <span class="texte-bouton-carte"
+          id="texte-bouton-carte">
+      Mode globe
+    </span>
   </div>
 
-  <div class="bouton-fleche-carte">
+  <button id="mode-globe" class="bouton-fleche-carte">
     <img src="img/fleche-btn-carte.png" alt="Flèche" class="icone-fleche">
-  </div>
-</button>
-    </div>
+  </button>
+</div>
+
 
     <section id="carte-palestine">
       <div id="mapdiv"></div>
