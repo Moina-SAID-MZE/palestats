@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  /* === Timeline === */
+  /* -----------------------------
+     TIMELINE
+  ----------------------------- */
   fetch("data.json")
     .then(r => {
       if (!r.ok) throw new Error(`Erreur HTTP: ${r.status}`);
@@ -136,10 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
           item.classList.toggle('active', i === currentIndex);
         });
 
-        // Met à jour la barre de progression
+        // Met à jour la barre de progression ( aider par l’intelligence artificielle pour faire fonctionner )
         progressBar.style.width = `${((currentIndex + 1) / events.length) * 100}%`;
 
-        // Fait défiler la frise sans bouger la page
+        // Fait défiler la frise sans bouger la page (aider par l’intelligence artificielle pour faire fonctionner)
         const activeDate = datesBar.children[currentIndex];
         const scrollLeft = activeDate.offsetLeft - (datesBar.clientWidth / 2) + (activeDate.offsetWidth / 2);
         datesBar.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
@@ -249,7 +251,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 }); 
 
-// chiffres qui defilent
+  /* -----------------------------
+   CHIFFRES QUI DÉFILENT
+  ----------------------------- */
 //* Pour cette section l'intelligence artificielle a été solicitée car 
 //je ne savais pas comment faire defiler les chiffres et comment faire en sorte qu'a chaque fois que l'on revient sur la section le defillement recommence.
 
@@ -511,6 +515,10 @@ am5.ready(function() {
 let root = null;
 let currentChartType = 'morts'; 
 
+/*  
+   Structure de configuration pour les deux types de graphiques.
+   
+*/
 const DATA_PATHS = {
   morts: {
       path: "data/mort-graphique.json", 
@@ -539,7 +547,7 @@ function createChart(data, config) {
     root.dom.style.height = "500px";
     root.dom.style.width = "100%";
 
-    // Configuration des couleurs et du thème
+    // Palette de couleur
     root.interfaceColors.set("text", am5.color(0xFFFFFF));
     root.setThemes([am5themes_Animated.new(root)]);
     
@@ -560,7 +568,7 @@ function createChart(data, config) {
     var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
     cursor.lineY.set("visible", false);
 
-    // Axe X
+    // Axe X 
     var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
       maxDeviation: 0.3,
       baseInterval: { timeUnit: "year", count: 1 },
@@ -600,7 +608,7 @@ function createChart(data, config) {
     });
 
 
-    // --- SÉRIE 1 (Couleur 1) ---
+    // --- SÉRIE 1 (trait) ---
     var series1 = chart.series.push(am5xy.LineSeries.new(root, {
       name: config.source1,
       xAxis: xAxis,
@@ -616,7 +624,7 @@ function createChart(data, config) {
     series1.data.setAll(data);
     series1.appear(1000);
 
-    // --- SÉRIE 2 (Couleur 2) ---
+    // --- SÉRIE 2 (pointillés) ---
     var series2 = chart.series.push(am5xy.LineSeries.new(root, {
       name: config.source2,
       xAxis: xAxis,
@@ -651,20 +659,20 @@ function loadChartData(type) {
     const config = DATA_PATHS[type];
     const titleElement = document.getElementById('graph-title');
 
-    // ⬇⬇⬇ ici on pointe vers le texte du BOUTON DU GRAPHIQUE uniquement
+
     const toggleTextElement = document.getElementById('toggle-text-graph');
     
-    // 1. Mettre à jour le titre
+
     if (titleElement) {
         titleElement.textContent = config.title.toUpperCase();
     }
     
-    // 2. Mettre à jour le texte du bouton
+
     if (toggleTextElement) {
         toggleTextElement.textContent = config.buttonText;
     }
 
-    // 3. Charger et dessiner le graphique
+
     fetch(config.path)
         .then(response => response.json())
         .then(json_data_raw => {
@@ -679,18 +687,18 @@ function loadChartData(type) {
 }
 
 
-// --- Écouteur d'événement pour le Bouton de Bascule ---
+// --- Bascule entre "morts" et "blessés". (Ce mécanisme a été fait avec l’aide de l’IA pour que sa fonctione.)//
 document.addEventListener('DOMContentLoaded', () => {
 
     const toggleBtn = document.getElementById('toggle-chart-btn');
 
     if (toggleBtn) {
-        // Charge le graphique "morts" au démarrage
+         // Charge le premier graphique
         loadChartData(currentChartType);
 
         toggleBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            // Basculer l'état
+             // Inversion du type de graphique (logique toggle)
             currentChartType = (currentChartType === 'morts') ? 'blesses' : 'morts';
             
             // Recharger le graphique
@@ -701,4 +709,5 @@ document.addEventListener('DOMContentLoaded', () => {
         loadChartData(currentChartType);
     }
 });
+
 
