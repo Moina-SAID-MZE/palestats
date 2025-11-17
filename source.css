@@ -63,8 +63,8 @@
   }
   
   .bouton-contact:hover {
-    border-color: var(--rouge);
-    color: var(--rouge);
+    border-color: #ff0000;
+    color: #ff0000;
   }
   
   /* ============================    SECTION HERO    ============================ */
