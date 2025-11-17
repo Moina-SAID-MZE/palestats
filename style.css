@@ -881,6 +881,16 @@ hr {
   color: #999;
 }
 
+.source a {
+  color: white;
+  text-decoration: none;
+}
+
+.source a:hover {
+  text-decoration: underline;
+}
+
+
 
 
 
@@ -1195,6 +1205,14 @@ hr {
   align-items: center;
 }
 
+.footer-lien {
+  position: relative;
+  display: inline-block;
+  color: white;        
+  text-decoration: none; 
+}
+
+
 .footer-lien::after {
   content: "";
   position: absolute;
@@ -1213,6 +1231,8 @@ hr {
 .footer-lien:hover::after {
   width: 100%;
 }
+
+
 /* Popup */
 .popup-pasteque {
   display: none;
@@ -1604,6 +1624,7 @@ hr {
   }
 }
 
+
 /* ===========================
    FOOTER 
 =========================== */
@@ -1747,8 +1768,7 @@ hr {
     height: 30px;
     font-size: 18px;
   }
-}
 
 
 
-
+}}
