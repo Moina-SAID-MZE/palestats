@@ -136,22 +136,19 @@ a:hover {
   position: relative;
   border: 1px solid #1E1E1E;
   border-radius: 12px;
-  padding: 25px;
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 0px; 
   margin-bottom: 25px;
-
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end; 
+  justify-content: flex-end;
   gap: 30px;
 }
 
-.texte-bonhomme {
-  flex: 1;
-}
-
 .bonhomme {
-  width: 320px;
-  margin: 20px 0 -30px auto; /* collé à droite en desktop */
-  display: block;
+  width: 320px; 
 }
 
 /* ============================   BOUTON RETOUR HAUT   ============================ */
@@ -470,3 +467,4 @@ html {
     width: 34px;
   }
 }
+
