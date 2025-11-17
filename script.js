@@ -250,6 +250,9 @@ document.addEventListener('DOMContentLoaded', () => {
 }); 
 
 // chiffres qui defilent
+//* Pour cette section l'intelligence artificielle a été solicitée car 
+//je ne savais pas comment faire defiler les chiffres et comment faire en sorte qu'a chaque fois que l'on revient sur la section le defillement recommence.
+
 document.addEventListener("DOMContentLoaded", () => {
   const valeurs = document.querySelectorAll(".valeur");
 
@@ -320,7 +323,7 @@ boutons.forEach((bouton) => {
     // Active le bouton
     bouton.classList.add('active');
 
-    // Changer l'image principale
+    // Change le dessin
     const nouvelleImage = bouton.getAttribute('data-image');
     const nouveauID = bouton.getAttribute('data-id');
     imageDessin.src = nouvelleImage;
@@ -698,3 +701,4 @@ document.addEventListener('DOMContentLoaded', () => {
         loadChartData(currentChartType);
     }
 });
+
