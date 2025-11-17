@@ -3,12 +3,15 @@ html, body {
   width: 100%;
   background: var(--fond);
   color: var(--texte);
-  font-family: 'Manrope', sans-serif; 
+  font-family: 'Manrope', sans-serif;
   overflow-x: hidden;
-   --fond: #070708;
+
+  /* Variables globales */
+  --fond: #070708;
   --rouge: #8A2121;
   --texte: #FFFFFF;
   --gris: #BEBEBE;
+  --side-padding: clamp(80px, 10vw, 160px);
 }
 
 h1, h2, h3 {
@@ -23,11 +26,12 @@ p, a, li {
 .container {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 clamp(80px, 10vw, 160px);
+  padding: 0 var(--side-padding);
   box-sizing: border-box;
 }
 
-/* ============================    HEADER    ============================ */
+/* ============================ HEADER ============================ */
+
 .entete {
   background: var(--fond);
   border-bottom: 1px solid #222;
@@ -37,7 +41,7 @@ p, a, li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 10vw;
+  padding: 16px var(--side-padding);
 }
 
 .logo img {
@@ -61,13 +65,15 @@ p, a, li {
   color: var(--rouge);
 }
 
-/* ============================    SECTION INTRO    ============================ */
+/* ============================ SECTION INTRO ============================ */
+
 .intro {
   position: relative;
   padding: 30px 0 90px;
   background: var(--fond);
   overflow: hidden;
 }
+
 .intro .container {
   position: relative;
   display: grid;
@@ -77,17 +83,14 @@ p, a, li {
   z-index: 1;
 }
 
-
-/* Image pastèque */
 .pasteque {
   position: absolute;
-  top: 40%;               
-  right: 15%;              
+  top: 40%;
+  right: 15%;
   transform: translateY(-50%);
-  width: 230px;                    
+  width: 230px;
 }
 
-/* Bloc texte gauche */
 .bloc-gauche {
   display: flex;
   flex-direction: column;
@@ -95,7 +98,6 @@ p, a, li {
   z-index: 1;
 }
 
-/* Texte + bouton */
 .texte-bouton {
   display: flex;
   align-items: center;
@@ -110,7 +112,6 @@ p, a, li {
   margin: 0;
 }
 
-/* Bouton image */
 .bouton {
   display: inline-block;
   transition: transform 0.25s ease;
@@ -126,7 +127,6 @@ p, a, li {
   transform: translateY(-3px);
 }
 
-/* Image principale */
 .image {
   display: block;
   width: 85%;
@@ -135,7 +135,8 @@ p, a, li {
   z-index: 1;
 }
 
-/* ============================    LISTE DE PRÉNOMS DÉFILANTE    ============================ */
+/* ============================ LISTE PRÉNOMS ============================ */
+
 .liste-prenoms {
   width: 100%;
   overflow: hidden;
@@ -158,26 +159,20 @@ p, a, li {
   white-space: nowrap;
 }
 
-/* ============================    PRÉSENTATION    ============================ */
+/* ============================ SECTION PRÉSENTATION ============================ */
 
-.colored-title{
+.colored-title {
   word-spacing: -10px;
 }
 
-.colored-title span:nth-child(1){
-  color:rgb(77, 199, 77);
-}
-.colored-title span:nth-child(2){
-  color:white;
-}.colored-title span:nth-child(3){
-  color:rgb(222, 58, 58);
-}
+.colored-title span:nth-child(1) { color: rgb(77, 199, 77); }
+.colored-title span:nth-child(2) { color: white; }
+.colored-title span:nth-child(3) { color: rgb(222, 58, 58); }
 
 #presentation {
   background: #0e0e0e;
   color: #e6e6e6;
   padding: 50px 0;
-  font-family: 'Manrope', sans-serif; 
 }
 
 .section-title {
@@ -219,13 +214,11 @@ p, a, li {
   font-size: 15px;
 }
 
-
-/*chiffres defilement*/
+/* ============================ SECTION CHIFFRES ============================ */
 
 #chiffres {
   background: url("img/image-fond-chiffres.png") center/cover no-repeat;
   color: #fff;
-  font-family: 'Manrope', sans-serif;
   padding: 120px 0;
   text-align: center;
   position: relative;
@@ -234,32 +227,31 @@ p, a, li {
 .header-chiffres {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  margin-left: 120px; 
+  align-items: flex-start;
+  padding: 0 var(--side-padding);
   margin-bottom: 60px;
 }
 
 .sous-titre {
-  margin: 0 0 10px 0; 
+  margin: 0 0 10px;
 }
 
 .titre-section {
   margin: 0;
 }
 
-
 .grille-chiffres {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 50px 70px; 
+  gap: 50px 70px;
   max-width: 950px;
   margin: 0 auto;
 }
 
 .bloc-chiffre {
   background: url("img/rectangle-chiffres.png") center/cover no-repeat;
-  border-radius: 14px; 
-  border: 3px solid rgb(255, 255, 255); 
+  border-radius: 14px;
+  border: 3px solid white;
   padding: 20px 25px;
   max-width: 400px;
   width: 100%;
@@ -278,47 +270,15 @@ p, a, li {
   margin: 0;
 }
 
-.texte {
+.bloc-chiffre .texte {
   font-size: 20px;
   color: #ebebeb;
-font-weight: 600;
+  font-weight: 600;
   line-height: 1.3;
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  #chiffres {
-    padding: 60px 20px;
-  }
+/* (FIN PARTIE 1) */
 
-  .titre-section {
-    font-size: 22px;
-    margin-bottom: 40px;
-  }
-
-  .grille-chiffres {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .bloc-chiffre {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 100%;
-    min-height: auto;
-    padding: 22px;
-  }
-
-  .valeur {
-    font-size: 30px;
-    margin-bottom: 6px;
-  }
-
-  .texte {
-    margin-left: 0;
-  }
-}
 
 /* ===================== SECTION TIMELINE  ===================== */
 
@@ -333,8 +293,8 @@ font-weight: 600;
 /* Titre + sous-titre */
 
 .timeline-header {
-  
   margin-bottom: 60px;
+  padding: 0 var(--side-padding);
 }
 
 .timeline-subtitle {
@@ -343,7 +303,7 @@ font-weight: 600;
   margin-bottom: -25px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-left: 50px;
+  margin-left: 0;
 }
 
 .timeline-title {
@@ -351,8 +311,9 @@ font-weight: 600;
   font-weight: 800;
   margin-bottom: 40px;
   position: relative;
-  margin-left: 50px;
+  margin-left: 0;
 }
+
 
 .timeline-title::after {
   content: '';
@@ -698,80 +659,38 @@ min-height: 180px;
     border-bottom: 1px solid #2A2A2C
   }
 
-/* ==== BOUTON DU GRAPHIQUE (indépendant du bouton CARTE) ==== */
-
-.btn-graphique-texte {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: #1A1A1C;
-    border: 1.5px solid #2A2A2C;
-    border-radius: 60px;
-    padding: 12px 22px;
-    transition: all 0.25s ease;
-}
-
-.btn-graphique-texte:hover {
-    background: #222224;
-    border-color: #3B3B3E;
-}
-
-#icone-graphique {
-    width: 28px;
-    height: 28px;
-}
-
-#toggle-text-graph {
-    color: #FFFFFF;
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    white-space: nowrap;
-}
-
-/* Flèche du bouton graphique */
-.btn-graphique-fleche {
-    background: #1A1A1C;
-    border: 1.5px solid #2A2A2C;
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.btn-graphique-fleche:hover {
-    background: #222224;
-    border-color: #3B3B3E;
-    transform: scale(1.05);
-}
 
 
 
 /* ==================== SECTION DESSIN MORTS ======================================*/
 
 .memories {
-  max-width: 1100px;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 80px 0;
 }
 
 .text-title {
   text-align: left;
-  padding-left: 40px;      
+  padding: 0 var(--side-padding);
 }
 
-.sous-titre {  
+
+.memories .content {
+  padding: 0 var(--side-padding);
+}
+
+
+
+.memories .sous-titre {  
   margin-bottom: 5px;
   font-size: 0.8rem;
   color: #a3a3a3;
   letter-spacing: 0.5px;
-  margin-left: 5px;   
-  
+  margin-left: 5px;
 }
+
+
 
 h1 {
   font-size: 2rem;
@@ -938,8 +857,6 @@ hr {
 .source a:hover {
   text-decoration: underline;
 }
-
-
 
 
 
@@ -1491,6 +1408,7 @@ hr {
 }
 
 
+
 /* ======================================================================== */
 /* ============================  RESPONSIVE  =============================== */
 /* ======================================================================== */
@@ -1558,11 +1476,15 @@ hr {
 ================================= */
 @media (max-width: 700px) {
 
+  @media (max-width: 700px) {
+
   #chiffres .header-chiffres {
-    align-items: flex-start;  
-    margin-left: 0;          
-    padding-left: 15px;       
+    align-items: flex-start;
+    padding: 0 15px;   
+    margin-left: 0;
   }
+}
+
 
 
   #chiffres .sous-titre {
@@ -1672,7 +1594,6 @@ hr {
     box-sizing: border-box;
   }
 }
-
 
 /* ===========================
    FOOTER 
@@ -1817,7 +1738,8 @@ hr {
     height: 30px;
     font-size: 18px;
   }
-
-
-
 }
+
+
+
+
